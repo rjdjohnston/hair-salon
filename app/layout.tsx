@@ -1,10 +1,14 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Barlow_Condensed, DM_Sans } from 'next/font/google'
 import './globals.css'
 
+const display = Barlow_Condensed({ subsets: ['latin'], weight: ['600', '700', '800', '900'], variable: '--font-display' })
+const sans = DM_Sans({ subsets: ['latin'], variable: '--font-body' })
+
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Hair Mechanix | Old-School Soul. New-School Style.',
+  description: 'More than a haircut. A tune-up. Explore precision haircuts, beard detailing, and grooming at Hair Mechanix. Find your shop and book your chair.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -40,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className={`${display.variable} ${sans.variable} antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
