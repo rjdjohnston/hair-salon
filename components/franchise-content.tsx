@@ -19,6 +19,16 @@ export function FranchiseContent() {
       <div className="careers-actions"><a className="button button-orange" href="#franchise-inquiry">LET&apos;S TALK OWNERSHIP <ArrowUpRight size={17}/></a><a className="text-link" href="#opportunity">EXPLORE THE OPPORTUNITY</a></div>
       <p className="careers-caption">FRANCHISE & BUSINESS OPPORTUNITIES · HAIR MECHANIX</p>
     </section>
+    <section aria-label="Hair Mechanix at a glance" className="bg-[var(--brand-orange)] text-[var(--brand-ink)] px-6 py-10 md:px-12">
+      <dl className="mx-auto flex max-w-7xl flex-wrap gap-y-8 text-center">
+        {[['27', 'Locations'], ['14', 'Years in business'], ['233', 'Employees'], ['5', 'States']].map(([value, label]) => (
+          <div key={label} className="flex w-1/2 flex-col gap-2 md:w-1/4">
+            <dt className="order-2 font-sans text-sm font-semibold uppercase tracking-widest">{label}</dt>
+            <dd className="font-sans text-5xl font-bold leading-none md:text-6xl" style={{ fontFamily: 'var(--font-display), Impact, sans-serif' }}>{value}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
     <section id="opportunity" className="section-wrap details-section">
       <div className="section-heading"><div><p className="eyebrow">A BUSINESS WITH CHARACTER</p><h2>BUILT TO STAND OUT.</h2></div></div>
       <div className="careers-perks">{advantages.map(({ icon: Icon, title, text }) => <article key={title}><Icon size={24} aria-hidden="true"/><h3>{title}</h3><p>{text}</p></article>)}</div>
