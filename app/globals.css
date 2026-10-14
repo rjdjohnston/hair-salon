@@ -345,6 +345,22 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 @media(max-width:600px) { .location-filters { flex-direction: column; align-items: stretch; } .location-filters select { width: 100%; } .location-hours { padding: 24px; } .header-book { font-size: 12px; } }
 
 .careers-hero h1 { max-width: 1100px; }
+  .crew-video-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .crew-video-controls { display: flex; gap: 8px; }
+  .crew-video-controls button { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid currentColor; border-radius: 50%; cursor: pointer; }
+  .crew-video-controls button:hover { background: var(--brand-orange); color: var(--brand-ink); }
+  .crew-video-track { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; list-style: none; padding: 0 0 20px; margin: 24px 0; scrollbar-width: thin; }
+  .crew-video-card { flex: 0 0 calc((100% - 48px) / 3); min-width: 0; scroll-snap-align: start; border: 1px solid currentColor; }
+  .crew-video-media { aspect-ratio: 16 / 9; background: var(--brand-ink); }
+  .crew-video-media iframe, .crew-video-media button { display: block; width: 100%; height: 100%; border: 0; }
+  .crew-video-media button { position: relative; cursor: pointer; padding: 0; overflow: hidden; }
+  .crew-video-media img { width: 100%; height: 100%; object-fit: cover; }
+  .crew-video-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--brand-orange); color: var(--brand-ink); }
+  .crew-video-caption { padding: 20px; }
+  .crew-video-caption h3 { font-size: 22px; line-height: 1.3; margin: 0 0 12px; }
+  .crew-video-caption > span { font-size: 14px; }
+  @media(max-width: 1000px) { .crew-video-card { flex-basis: calc((100% - 24px) / 2); } }
+  @media(max-width: 600px) { .crew-video-card { flex-basis: 86%; } .crew-video-heading { align-items: flex-end; } .crew-video-controls button { width: 44px; height: 44px; } }
   .careers-hero-layout { display: flex; align-items: center; gap: 48px; }
   .careers-hero-layout > div { flex: 1; min-width: 0; }
   .careers-hero .careers-hero-layout h1 { font-size: clamp(40px, 4.3vw, 72px); overflow-wrap: break-word; }
