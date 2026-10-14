@@ -7,7 +7,7 @@ const display = Barlow_Condensed({ subsets: ['latin'], weight: ['600', '700', '8
 const sans = DM_Sans({ subsets: ['latin'], variable: '--font-body' })
 
 export const metadata: Metadata = {
-  title: 'Hair Mechanix | Old-School Soul. New-School Style.',
+  title: 'Hair Mechanix | Precision. Personality. Confidence.',
   description: 'More than a haircut. A tune-up. Explore precision haircuts, beard detailing, and grooming at Hair Mechanix. Find your shop and book your chair.',
   generator: 'v0.app',
   icons: {

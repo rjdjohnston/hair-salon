@@ -11,11 +11,11 @@ export function Wordmark() {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
-  const links = [{ name: 'Services', href: '#services' }, { name: 'Our story', href: '#our-story' }, { name: 'Locations', href: '#locations' }, { name: 'Stylists', href: 'https://hairmx.com/our-stylists/' }, { name: 'Careers', href: 'https://hairmx.com/apply-now/' }]
+  const links = [{ name: 'Services', href: '/services' }, { name: 'Our story', href: '/#our-story' }, { name: 'Locations', href: '/#locations' }, { name: 'Stylists', href: 'https://hairmx.com/our-stylists/' }, { name: 'Careers', href: 'https://hairmx.com/apply-now/' }]
   return <>
     <div className="announcement"><span>GOOD HAIR. GREAT COMPANY. NO NONSENSE.</span><span>WALK IN. KICK BACK. LEAVE SHARP. <ArrowUpRight size={12}/></span></div>
     <header className="site-header">
-      <a href="#" aria-label="Hair Mechanix home"><Wordmark /></a>
+      <a href="/" aria-label="Hair Mechanix home"><Wordmark /></a>
       <nav className="desktop-nav" aria-label="Main navigation">{links.map(link => <a key={link.name} href={link.href}>{link.name}</a>)}</nav>
       <a className="button button-orange header-book" href={bookingUrl} target="_blank" rel="noopener noreferrer">BOOK A CHAIR <ArrowUpRight size={16}/></a>
       <button className="menu-toggle" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</button>
