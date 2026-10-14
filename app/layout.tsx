@@ -44,7 +44,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    // Recorder extensions may inject attributes on the root before hydration.
+    <html lang="en" className="bg-background" suppressHydrationWarning>
       <body className={`${display.variable} ${sans.variable} antialiased`}>
         <BookingModalHost>{children}</BookingModalHost>
         {process.env.NODE_ENV === 'production' && <Analytics />}
