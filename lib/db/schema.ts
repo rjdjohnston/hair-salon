@@ -6,6 +6,13 @@ export const franchiseInquiries = pgTable('franchise_inquiries', {
   consent: boolean('consent').notNull(), createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
 })
 
+export const contactMessages = pgTable('contact_messages', {
+  id: uuid('id').primaryKey(), name: text('name').notNull(), email: text('email').notNull(),
+  phone: text('phone').notNull().default(''), location: text('location').notNull().default(''),
+  topic: text('topic').notNull(), message: text('message').notNull(), consent: boolean('consent').notNull(),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+})
+
 export const applications = pgTable('job_applications', {
   id: uuid('id').primaryKey(), name: text('name').notNull(), email: text('email').notNull(), phone: text('phone').notNull(),
   location: text('location').notNull(), role: text('role').notNull(), licenseStatus: text('license_status').notNull(),
