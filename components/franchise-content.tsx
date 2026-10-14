@@ -21,7 +21,7 @@ export function FranchiseContent() {
     </section>
     <section aria-label="Hair Mechanix at a glance" className="bg-[var(--brand-orange)] text-[var(--brand-ink)] px-6 py-10 md:px-12">
       <dl className="mx-auto flex max-w-7xl flex-wrap gap-y-8 text-center">
-        {[['27', 'Locations'], ['14', 'Years in business'], ['233', 'Employees'], ['5', 'States']].map(([value, label]) => (
+        {[['27', 'Locations'], ['5', 'States'], ['233', 'Employees'], ['14', 'Years in business']].map(([value, label]) => (
           <div key={label} className="flex w-1/2 flex-col gap-2 md:w-1/4">
             <dt className="order-2 font-sans text-sm font-semibold uppercase tracking-widest">{label}</dt>
             <dd className="font-sans text-5xl font-bold leading-none md:text-6xl" style={{ fontFamily: 'var(--font-display), Impact, sans-serif' }}>{value}</dd>
