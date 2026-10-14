@@ -17,7 +17,7 @@ export function BlogDirectory() {
     setPage(next)
     document.getElementById('blog-library')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
-  const featured = articles[0]
+  const featured = articles.find(article => article.slug === 'how-often-should-guys-get-a-haircut') ?? articles[0]
   return <>
     <section className="service-intro section-wrap"><nav aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span>Blog</span></nav><p className="eyebrow">THE HAIR MECHANIX JOURNAL</p><h1>GOOD HAIR.<br/><em>GOOD KNOW-HOW.</em></h1><p className="service-lead">Fresh ideas, straightforward advice, and a little shop talk. Your next great look starts here.</p></section>
     <section className="journal-feature section-wrap"><div><p className="eyebrow">IN THE SPOTLIGHT · {featured.category}</p><h2><Link href={`/blog/${featured.slug}`}>{featured.title}</Link></h2><p>{featured.intro}</p><Link className="text-link" href={`/blog/${featured.slug}`}>READ THE GUIDE <ArrowUpRight size={18}/></Link></div><img src="/images/hairmx-home.jpg" alt="Leather lounge seating and automotive decor inside Hair Mechanix" width={900} height={600}/></section>
