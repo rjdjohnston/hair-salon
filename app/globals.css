@@ -345,6 +345,7 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 @media(max-width:600px) { .location-filters { flex-direction: column; align-items: stretch; } .location-filters select { width: 100%; } .location-hours { padding: 24px; } .header-book { font-size: 12px; } }
 
 .careers-hero h1 { max-width: 1100px; }
+  .crew-videos + .stylist-team, .crew-videos + .social-gallery { border-top: 1px solid color-mix(in srgb, var(--brand-ink) 20%, transparent); }
   .crew-video-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .crew-video-controls { display: flex; gap: 8px; }
   .crew-video-controls button { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid currentColor; border-radius: 50%; cursor: pointer; }

@@ -13,10 +13,10 @@ function decodeXml(value: string) {
   })
 }
 
-export async function CareersPlaylist() {
+export async function CareersPlaylist({ playlist = playlistId, commercials = false }: { playlist?: string; commercials?: boolean } = {}) {
   let videos: { id: string; title: string }[] = []
   try {
-    const response = await fetch(`https://www.youtube.com/feeds/videos.xml?playlist_id=${playlistId}`, { next: { revalidate: 3600 }, signal: AbortSignal.timeout(8000) })
+    const response = await fetch(`https://www.youtube.com/feeds/videos.xml?playlist_id=${playlist}`, { next: { revalidate: 3600 }, signal: AbortSignal.timeout(8000) })
     if (!response.ok) throw new Error('Playlist unavailable')
     const xml = await response.text()
     videos = Array.from(xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)).flatMap(([, entry]) => {
@@ -27,5 +27,5 @@ export async function CareersPlaylist() {
   } catch {
     // Keep the public playlist accessible when YouTube's feed is unavailable.
   }
-  return <VideoCarousel videos={videos} playlistId={playlistId} />
+  return <VideoCarousel videos={videos} playlistId={playlist} commercials={commercials} />
 }

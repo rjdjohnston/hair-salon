@@ -21,7 +21,6 @@ export function StylistsContent() {
       <p className="service-lead">Meet the Hair Mechanix rock-stars. A talented crew bringing skill, personality, and a little HMX energy to every chair.</p>
       <a className="button button-orange" href="#meet-the-team">MEET THE CREW <ArrowUpRight size={18} aria-hidden="true"/></a>
     </section>
-    <CareersPlaylist />
     <section className="stylist-spotlight section-wrap" aria-labelledby="spotlight-title">
       <div className="stylist-feature-photo"><Image src="/images/stylists/miranda.jpg" alt="Miranda, Hair Mechanix stylist in Morgantown" width={500} height={736} sizes="(max-width: 700px) 100vw, 40vw" priority/></div>
       <div className="stylist-feature-copy">
@@ -32,6 +31,7 @@ export function StylistsContent() {
         <Link className="button button-orange" href="/locations/morgantown">VISIT MIRANDA&apos;S SHOP <ArrowUpRight size={18} aria-hidden="true"/></Link>
       </div>
     </section>
+    <CareersPlaylist />
     <section className="stylist-team section-wrap" id="meet-the-team" aria-labelledby="team-title">
       <p className="eyebrow">HAIR MECHANIX ROCK-STARS</p>
       <h2 id="team-title">FIND YOUR PEOPLE.<br/><em>FIND YOUR STYLE.</em></h2>

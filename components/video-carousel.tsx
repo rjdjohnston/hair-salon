@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react'
 import { ArrowLeft, ArrowRight, ArrowUpRight, Play } from 'lucide-react'
 
-export function VideoCarousel({ videos, playlistId }: { videos: { id: string; title: string }[]; playlistId: string }) {
+export function VideoCarousel({ videos, playlistId, commercials = false }: { videos: { id: string; title: string }[]; playlistId: string; commercials?: boolean }) {
   const track = useRef<HTMLUListElement>(null)
   const [playing, setPlaying] = useState<string | null>(null)
   function scroll(direction: number) {
@@ -13,7 +13,7 @@ export function VideoCarousel({ videos, playlistId }: { videos: { id: string; ti
     element.scrollBy({ left: direction * ((card?.getBoundingClientRect().width ?? 320) + 24), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
   }
   return <section className="section-wrap details-section crew-videos" aria-labelledby="crew-video-heading">
-    <div className="crew-video-heading"><div><p className="eyebrow">REAL PEOPLE. REAL PERSONALITY.</p><h2 id="crew-video-heading">MEET THE <em>CREW.</em></h2><p className="service-lead">Get to know the people behind the chair.</p></div>
+    <div className="crew-video-heading"><div><p className="eyebrow">{commercials ? 'HAIR MECHANIX ON SCREEN' : 'REAL PEOPLE. REAL PERSONALITY.'}</p><h2 id="crew-video-heading">{commercials ? <>COMMERCIALS.</> : <>MEET THE <em>CREW.</em></>}</h2><p className="service-lead">{commercials ? 'Our personality. On a bigger screen. Explore the latest Hair Mechanix commercials.' : 'Get to know the people behind the chair.'}</p></div>
       {videos.length > 0 && <div className="crew-video-controls"><button type="button" aria-label="Scroll videos left" aria-controls="crew-video-track" onClick={() => scroll(-1)}><ArrowLeft size={20}/></button><button type="button" aria-label="Scroll videos right" aria-controls="crew-video-track" onClick={() => scroll(1)}><ArrowRight size={20}/></button></div>}
     </div>
     {videos.length ? <ul id="crew-video-track" ref={track} className="crew-video-track" tabIndex={0} aria-label="Hair Mechanix crew videos, scroll horizontally">
