@@ -5,7 +5,7 @@ import { CareersHero, CareersBenefits, CareersRole, CareersQuestions } from '@/c
 
 export const metadata: Metadata = {
   title: 'Careers at Hair Mechanix | Join the Crew',
-  description: 'Explore full-time Michigan barber and cosmetologist opportunities at Hair Mechanix. Competitive earning potential, flexible shifts, training, and a supportive team.',
+  description: 'Explore barber and cosmetologist career opportunities at Hair Mechanix across all five states. Learn about earning potential, shifts, training, and opportunities at your preferred shop.',
 }
 
 export default function CareersPage() {
