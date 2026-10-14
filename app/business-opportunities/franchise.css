@@ -1,10 +1,10 @@
-.franchise-page { background:var(--background); color:var(--foreground); }
-.franchise-page h1,.franchise-page h2,.franchise-page h3 { font-family:inherit; font-weight:800; letter-spacing:-.045em; }
-.franchise-page h2 { font-size:clamp(36px,4.8vw,64px); line-height:1.05; text-wrap:balance; }
+.franchise-page { background:var(--brand-cream); color:var(--brand-ink); }
+.franchise-page h2,.franchise-page h3 { text-transform:uppercase; text-wrap:balance; }
+.franchise-story-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .franchise-page em { color:var(--brand-orange); font-style:normal; }
 .franchise-page p { line-height:1.7; }
 .franchise-page .eyebrow { font-size:14px; letter-spacing:.12em; margin-bottom:24px; }
-.franchise-hero { display:grid; grid-template-columns:1.12fr 1fr; background:var(--foreground); color:var(--background); }
+.franchise-hero { display:grid; grid-template-columns:1.12fr 1fr; background:var(--brand-ink); color:var(--brand-cream); }
 .franchise-hero-copy { padding:64px 40px 64px 5vw; }
 .franchise-hero-copy h1 { font-size:clamp(48px,6.1vw,96px); line-height:.99; }
 .franchise-hero-copy h1 span { color:var(--brand-orange); }
@@ -12,18 +12,18 @@
 .franchise-explore { display:flex; align-items:center; gap:12px; font-size:14px; margin-top:24px; }
 .franchise-hero-photo { position:relative; min-height:580px; }
 .franchise-hero-photo > img { width:100%; height:100%; position:absolute; inset:0; object-fit:cover; }
-.franchise-photo-caption { position:absolute; bottom:0; left:0; right:0; padding:24px; background:var(--foreground); color:var(--background); display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:700; letter-spacing:.08em; }
+.franchise-photo-caption { position:absolute; bottom:0; left:0; right:0; padding:24px; background:var(--brand-ink); color:var(--brand-cream); display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:700; letter-spacing:.08em; }
 .franchise-photo-caption span:last-child { display:flex; justify-content:space-between; color:var(--brand-orange); }
-.franchise-band { display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; padding:24px 5vw; background:var(--brand-orange); color:var(--foreground); font-size:14px; font-weight:800; letter-spacing:.055em; }
+.franchise-band { display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; padding:24px 5vw; background:var(--brand-orange); color:var(--brand-ink); font-size:14px; font-weight:800; letter-spacing:.055em; }
 .franchise-opportunity,.franchise-process,.franchise-faq { display:grid; grid-template-columns:1fr 1fr; gap:64px; }
 .franchise-opportunity p:not(.eyebrow) { margin-bottom:24px; font-size:17px; }
 .franchise-opportunity .franchise-lead { font-size:28px!important; font-weight:600; line-height:1.3; }
-.franchise-advantages { background:var(--secondary); color:var(--foreground); }
+.franchise-advantages { background:var(--brand-cream); color:var(--brand-ink); border-top:1px solid var(--border); }
 .franchise-advantage-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:48px; }
 .franchise-advantage-grid svg { color:var(--brand-orange); margin-bottom:24px; }
 .franchise-advantage-grid h3 { font-size:26px; line-height:1.2; margin-bottom:16px; }
 .franchise-advantage-grid p { font-size:16px; }
-.franchise-footprint { display:grid; grid-template-columns:1fr 1fr; background:var(--foreground); color:var(--background); }
+.franchise-footprint { display:grid; grid-template-columns:1fr 1fr; background:var(--brand-ink); color:var(--brand-cream); }
 .franchise-footprint > img { width:100%; height:100%; min-height:560px; object-fit:cover; }
 .franchise-footprint > div { padding:64px 5vw; }
 .franchise-footprint p:not(.eyebrow) { margin-block:24px; }
@@ -35,17 +35,17 @@
 .franchise-process li { display:flex; gap:24px; border-top:1px solid var(--border); padding-block:28px; }
 .franchise-process li > span { color:var(--brand-orange); font-size:28px; font-weight:700; }
 .franchise-process h3 { font-size:24px; margin-bottom:8px; }
-.franchise-inquiry { display:grid; grid-template-columns:1fr 1.15fr; gap:64px; background:var(--foreground); color:var(--background); scroll-margin-top:100px; }
+.franchise-inquiry { display:grid; grid-template-columns:1fr 1.15fr; gap:64px; background:var(--brand-ink); color:var(--brand-cream); scroll-margin-top:100px; }
 .franchise-inquiry > div > p:not(.eyebrow) { margin-top:28px; max-width:400px; }
 .franchise-fine { font-size:14px; opacity:.8; }
-.franchise-form { background:var(--background); color:var(--foreground); padding:36px; border-radius:8px; }
+.franchise-form { background:var(--brand-cream); color:var(--brand-ink); padding:36px; border-radius:0; }
 .franchise-form h3 { font-size:30px; line-height:1.2; margin-bottom:12px; }
 .franchise-form > p { font-size:14px; margin-bottom:24px; }
 .franchise-form fieldset { border:0; min-width:0; }
 .franchise-fields { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
 .franchise-fields label { display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; }
 .franchise-full { grid-column:1/-1; }
-.franchise-fields input,.franchise-fields select,.franchise-fields textarea { width:100%; min-width:0; padding:12px; border:1px solid var(--muted-foreground); background:var(--background); color:var(--foreground); border-radius:4px; font-size:16px; font-weight:400; }
+.franchise-fields input,.franchise-fields select,.franchise-fields textarea { width:100%; min-width:0; padding:12px; border:1px solid var(--muted-foreground); background:var(--brand-cream); color:var(--brand-ink); border-radius:4px; font-size:16px; font-weight:400; }
 .franchise-fields textarea { resize:vertical; }
 .franchise-consent { display:flex; align-items:flex-start; gap:12px; margin-block:24px; font-size:14px; line-height:1.6; }
 .franchise-consent input { margin-top:4px; width:18px; height:18px; flex-shrink:0; }
