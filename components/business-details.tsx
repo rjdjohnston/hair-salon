@@ -31,7 +31,7 @@ export function BusinessDetails() {
 }
 
 export function ResourceLinks() {
-  const resources = [['Our stylists','https://hairmx.com/our-stylists/'],['Blog','https://hairmx.com/blog/'],['Media gallery','https://hairmx.com/hairmxlife/'],['Feedback','https://www.hairmx.com/feedback/'],['Careers','/careers'],['Privacy policy','https://hairmx.com/privacy-policy-2/'],['Site map','https://hairmx.com/site-map/']]
+  const resources = [['Our stylists','https://hairmx.com/our-stylists/'],['Blog','/blog'],['Social','/social'],['Feedback','https://www.hairmx.com/feedback/'],['Careers','/careers'],['Privacy policy','https://hairmx.com/privacy-policy-2/'],['Site map','https://hairmx.com/site-map/']]
   const socials = [['Instagram','https://www.instagram.com/hairmx/'],['Facebook','https://www.facebook.com/HairMXUS/'],['YouTube','https://www.youtube.com/channel/UC2n1cQ4Zl1ET6huwtpzdN9g/featured'],['X','https://twitter.com/hairmx'],['Pinterest','https://www.pinterest.com/hairmx/']]
   return <div className="resource-links"><nav aria-label="More from Hair Mechanix">{resources.map(([name,url])=><a key={name} href={url}>{name}</a>)}</nav><nav id="social" aria-label="Social media">{socials.map(([name,url])=><a key={name} href={url} target="_blank" rel="noopener noreferrer">{name}<ArrowUpRight size={12}/></a>)}</nav></div>
 }

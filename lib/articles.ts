@@ -1,0 +1,36 @@
+export type Article = { slug: string; title: string; category: string; intro: string; sections: { title: string; text: string }[] }
+export const articles: Article[] = [
+  { slug: 'how-often-should-guys-get-a-haircut', title: 'How often should guys really get a haircut?', category: 'Maintenance', intro: 'A fresh cut feels great. Keeping it looking that way starts with a maintenance schedule that fits your style, not just your calendar.', sections: [
+    { title: 'Let your haircut set the pace', text: 'Short fades and closely tapered sides show growth quickly. A visit every two to three weeks can help preserve those clean transitions. If you wear a longer, relaxed style, you may be comfortable stretching appointments to four to six weeks. These are starting points, not rules: your hair growth and preferred finish matter most.' },
+    { title: 'Watch the shape, not the date', text: 'Hair falling into your eyes, bulk building above your ears, or a neckline losing its shape are signs you may be ready for a trim. If your usual styling routine suddenly takes more effort, your cut may have grown beyond its intended shape.' },
+    { title: 'Make the most of the time between visits', text: 'Ask your stylist how to dry and style your cut at home. Start with a small amount of product and add more only if needed. A routine matched to your hair texture is more useful than a shelf full of products.' },
+    { title: 'Plan your next tune-up', text: 'Before leaving the chair, talk about when to return. Your stylist can suggest a schedule based on the haircut you chose, how quickly your hair grows, and how sharp you want to keep it.' },
+  ] },
+  { slug: 'haircuts-for-thick-hair', title: 'The best men’s haircuts for thick hair', category: 'Style guides', intro: 'Natural volume is an advantage. The right shape makes thick hair easier to manage without taking away its character.', sections: [
+    { title: 'Work with your texture', text: 'A textured crop can keep the shape compact while giving natural movement room to show. A classic taper leaves more flexibility on top, while shorter sides help reduce the overall weight of the haircut.' },
+    { title: 'Take weight out thoughtfully', text: 'Removing bulk is not the same as cutting everything short. Tell your stylist where your hair feels heavy and how it behaves as it grows. The right approach depends on whether your hair is straight, wavy, or curly.' },
+    { title: 'Keep styling simple', text: 'Apply a little product at a time and distribute it evenly. If you use a dryer, guide your hair toward its finished shape rather than fighting it once it is dry. Ask for a demonstration before you leave the shop.' },
+  ] },
+  { slug: 'choosing-your-fade', title: 'What is the right fade haircut for you?', category: 'Style guides', intro: 'Low, mid, or high: a fade changes the entire feel of a haircut. Here is how to start the conversation in the chair.', sections: [
+    { title: 'Low fade: keep it understated', text: 'A low fade begins close to the ears and neckline. It keeps more weight through the sides and creates a subtle transition, making it a useful starting point if you want a clean finish without a dramatic change.' },
+    { title: 'Mid and high fades: turn up the contrast', text: 'A mid fade moves the transition farther up the head for a balanced, noticeable finish. A high fade takes it higher still, emphasizing the shape and length on top. Bring a reference photo so you and your stylist are discussing the same result.' },
+    { title: 'Decide how close you want to go', text: 'Fade height and fade length are different decisions. A skin fade blends down to the skin; other fades retain a little length at their shortest point. Talk through both details and how often you want to come back for maintenance.' },
+  ] },
+  { slug: 'haircuts-for-glasses', title: 'Find a haircut that fits your frames', category: 'Style guides', intro: 'Your frames are part of your everyday look. A haircut that works alongside them helps bring the whole picture together.', sections: [
+    { title: 'Bring your glasses to the appointment', text: 'Wear your everyday frames so your stylist can see how they sit around your temples and ears. This helps you decide how much length to keep at the sides and where the haircut should feel lighter.' },
+    { title: 'Balance volume and shape', text: 'A textured top can add movement above strong frames, while a neat side part offers a more classic finish. There is no single haircut for every frame shape: face shape, hair texture, and your own taste all belong in the conversation.' },
+    { title: 'Consider comfort, too', text: 'Hair that bunches above the arms of your glasses can be frustrating. Ask about a taper or a little bulk reduction around that area, then check the finished cut with your glasses on before leaving.' },
+  ] },
+  { slug: 'classic-or-modern-haircuts', title: 'Classic or modern? Find your signature look', category: 'In the chair', intro: 'You do not have to pick a side. The best haircut can borrow from the classics and still feel completely your own.', sections: [
+    { title: 'Start with what you like', text: 'A side part, crew cut, or slicked-back style offers a familiar foundation. Modern texture or a different taper can change the feel without losing the structure that drew you to the cut in the first place.' },
+    { title: 'Be honest about your routine', text: 'A reference photo is a great conversation starter, but tell your stylist how much time you actually want to spend styling. A cut that works with your morning routine is more likely to feel good every day.' },
+    { title: 'Leave room to evolve', text: 'You can change your look gradually. Try a little more texture, slightly shorter sides, or a different finish first. At your next visit, share what worked and what you would like to adjust.' },
+  ] },
+  { slug: 'sports-haircuts', title: 'Game-ready cuts. Everyday confidence.', category: 'In the chair', intro: 'An athletic-inspired haircut is not just for athletes. Easy maintenance and a clean shape work long after the final whistle.', sections: [
+    { title: 'Choose a practical shape', text: 'A textured crop, crew cut, or short taper can keep hair manageable during training and busy days. If you prefer length on top, ask about a shape you can push back comfortably and restyle afterward.' },
+    { title: 'Think about your equipment', text: 'Helmets, hats, and headbands affect how a style holds up. Mention what you wear regularly so your stylist can recommend a cut that is easy to reset, rather than one that depends on perfect volume all day.' },
+    { title: 'Make it yours', text: 'Sports-inspired does not have to mean one standard cut. Natural curls, a longer textured top, or a subtle fade can add personality while keeping the overall style practical.' },
+  ] },
+]
+export function getArticle(slug: string) { return articles.find(article => article.slug === slug) }
+export function readingTime(article: Article) { return Math.max(1, Math.ceil((article.intro + article.sections.map(section => section.text).join(' ')).split(/\s+/).length / 200)) }
