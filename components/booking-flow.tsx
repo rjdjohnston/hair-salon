@@ -11,10 +11,10 @@ const extras = ['Scalp massage', 'Facial waxing', 'Hot towel treatment']
 const artists = ['First available', 'Artist A', 'Artist B']
 const dates = ['Mon, Oct 19', 'Tue, Oct 20', 'Wed, Oct 21', 'Thu, Oct 22', 'Fri, Oct 23', 'Sat, Oct 24']
 
-export function BookingFlow() {
+export function BookingFlow({ onClose }: { onClose?: () => void } = {}) {
   const router = useRouter()
   const dialog = useRef<HTMLDialogElement>(null)
-  function closeBooking() { router.push('/') }
+  function closeBooking() { if (onClose) onClose(); else router.push('/') }
   useEffect(() => {
     const element = dialog.current
     element?.showModal()
@@ -42,7 +42,7 @@ export function BookingFlow() {
   return <dialog ref={dialog} aria-labelledby="booking-title" onCancel={event => { event.preventDefault(); closeBooking() }} className="fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none overflow-y-auto border-0 bg-[var(--brand-cream)] p-0 font-sans text-[var(--brand-ink)]">
     <header className="sticky top-0 z-20 flex items-center justify-between border-b border-current/20 bg-[var(--brand-ink)] px-6 py-4 text-[var(--brand-cream)] md:px-12">
       <div><h1 id="booking-title" className="!text-2xl !leading-tight">BOOK A CHAIR.</h1><p className="mt-1 text-sm opacity-75">Design preview · No appointments are created</p></div>
-      <button autoFocus type="button" onClick={closeBooking} aria-label="Close booking and return home" className="flex min-h-11 min-w-11 items-center justify-center rounded-full border border-current/40 text-2xl hover:bg-[var(--brand-orange)] hover:text-[var(--brand-ink)] focus-visible:outline-2 focus-visible:outline-offset-4">×</button>
+      <button autoFocus type="button" onClick={closeBooking} aria-label="Close booking" className="flex min-h-11 min-w-11 items-center justify-center rounded-full border border-current/40 text-2xl hover:bg-[var(--brand-orange)] hover:text-[var(--brand-ink)] focus-visible:outline-2 focus-visible:outline-offset-4">×</button>
     </header>
     <section className="section-wrap details-section !py-8">
       <ol aria-label="Booking progress" className="flex flex-wrap gap-3 border-b border-current/20 pb-6">{steps.map((label, index) => <li key={label}><button type="button" disabled={index > step || complete} aria-current={step === index ? 'step' : undefined} onClick={() => go(index)} className={`flex items-center gap-2 px-3 py-2 text-sm disabled:cursor-default ${step === index ? 'bg-[var(--brand-ink)] text-[var(--brand-cream)]' : 'text-[var(--brand-ink)]'}`}><span>{index < step ? <Check size={16}/> : `${index + 1}.`}</span>{label}</button></li>)}</ol>

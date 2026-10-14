@@ -21,7 +21,7 @@ export function LocationDetail({ shop }: { shop: Shop }) {
 </h1>
 <p className="service-lead">Precision cuts. Personal attention. The Hair Mechanix experience, right in your neighborhood.</p>
 <div className="shop-actions">
-<a className="button button-orange" href={bookingUrl} target="_blank" rel="noopener noreferrer">BOOK AN APPOINTMENT <ArrowUpRight size={18}/>
+<a className="button button-orange" href={bookingUrl} aria-haspopup="dialog">BOOK AN APPOINTMENT <ArrowUpRight size={18}/>
 </a>
 <a className="button button-dark" href={directionsUrl(shop)} target="_blank" rel="noopener noreferrer">GET DIRECTIONS <ArrowUpRight size={18}/>
 </a>

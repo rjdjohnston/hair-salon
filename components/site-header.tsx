@@ -62,7 +62,7 @@ export function SiteHeader() {
     }}>
       <a href="/" aria-label="Hair Mechanix home"><Wordmark /></a>
       <nav className="desktop-nav" aria-label="Main navigation"><NavigationItems close={close}/></nav>
-      <a className="button button-orange header-book" href={bookingUrl} target="_blank" rel="noopener noreferrer">BOOK A CHAIR <ArrowUpRight size={16}/></a>
+      <a className="button button-orange header-book" href={bookingUrl} aria-haspopup="dialog">BOOK A CHAIR <ArrowUpRight size={16}/></a>
       <button ref={menuRef} className="menu-toggle" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => { if (open) close(); else setOpen(true) }}>{open ? <X/> : <Menu/>}</button>
       {open && <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation"><NavigationItems close={close}/></nav>}
     </header>
