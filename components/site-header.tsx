@@ -64,7 +64,7 @@ export function SiteHeader() {
       <nav className="desktop-nav" aria-label="Main navigation"><NavigationItems close={close}/></nav>
       <a className="button button-orange header-book" href="/locations">FIND YOUR SHOP <ArrowUpRight size={16}/></a>
       <button ref={menuRef} className="menu-toggle" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => { if (open) close(); else setOpen(true) }}>{open ? <X/> : <Menu/>}</button>
-      {open && <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation"><NavigationItems close={close}/></nav>}
+      {open && <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation"><NavigationItems close={close}/><a className="button button-orange mobile-book" href={bookingUrl} onClick={close}>BOOK YOUR CHAIR <ArrowUpRight size={18} aria-hidden="true"/></a></nav>}
     </header>
   </>
 }
