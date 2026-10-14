@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react'
 import { services } from '@/lib/services'
 import { shops, states } from '@/lib/locations'
@@ -12,10 +12,18 @@ export function Wordmark() {
 }
 
 function NavigationItems({ close }: { close: () => void }) {
+  const hoverHandlers = {
+    onPointerEnter: (event: ReactPointerEvent<HTMLDetailsElement>) => {
+      if (event.pointerType === 'mouse' && event.currentTarget.closest('.desktop-nav')) event.currentTarget.open = true
+    },
+    onPointerLeave: (event: ReactPointerEvent<HTMLDetailsElement>) => {
+      if (event.pointerType === 'mouse' && event.currentTarget.closest('.desktop-nav') && !event.currentTarget.contains(document.activeElement)) event.currentTarget.open = false
+    },
+  }
   return <>
-    <details className="nav-dropdown"><summary>Services <ChevronDown size={14} aria-hidden="true"/></summary><div className="nav-panel"><a className="nav-overview" href="/services" onClick={close}>Explore all services <ArrowUpRight size={16}/></a><div className="nav-service-list">{services.map(service => <a key={service.slug} href={`/services/${service.slug}`} onClick={close}>{service.title}</a>)}</div></div></details>
+    <details className="nav-dropdown" {...hoverHandlers}><summary>Services <ChevronDown size={14} aria-hidden="true"/></summary><div className="nav-panel"><a className="nav-overview" href="/services" onClick={close}>Explore all services <ArrowUpRight size={16}/></a><div className="nav-service-list">{services.map(service => <a key={service.slug} href={`/services/${service.slug}`} onClick={close}>{service.title}</a>)}</div></div></details>
     <a href="/#our-story" onClick={close}>Our story</a>
-    <details className="nav-dropdown nav-locations"><summary>Locations <ChevronDown size={14} aria-hidden="true"/></summary><div className="nav-panel"><a className="nav-overview" href="/locations" onClick={close}>Find your shop <ArrowUpRight size={16}/></a><div className="nav-state-list">{states.map(state => <section key={state}><h2>{state}</h2>{shops.filter(shop => shop.state === state).map(shop => <a key={shop.slug} href={`/locations/${shop.slug}`} onClick={close}>{shop.name}</a>)}</section>)}</div></div></details>
+    <details className="nav-dropdown nav-locations" {...hoverHandlers}><summary>Locations <ChevronDown size={14} aria-hidden="true"/></summary><div className="nav-panel"><a className="nav-overview" href="/locations" onClick={close}>Find your shop <ArrowUpRight size={16}/></a><div className="nav-state-list">{states.map(state => <section key={state}><h2>{state}</h2>{shops.filter(shop => shop.state === state).map(shop => <a key={shop.slug} href={`/locations/${shop.slug}`} onClick={close}>{shop.name}</a>)}</section>)}</div></div></details>
     <a href="https://hairmx.com/our-stylists/" onClick={close}>Stylists</a>
     <a href="https://hairmx.com/apply-now/" onClick={close}>Careers</a>
   </>
