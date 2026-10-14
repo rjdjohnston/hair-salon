@@ -366,6 +366,30 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 @media(max-width:760px) { .careers-pay-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .careers-pay-grid article:nth-child(2) { border-right: 0; } .careers-pay-grid article:nth-child(-n+2) { border-bottom: 1px solid #23231b33; } }
 @media(max-width:600px) { .careers-hero h1 { font-size: clamp(42px,10.5vw,62px); } .careers-perks { grid-template-columns: 1fr; gap: 30px; } .careers-pay-grid article { padding: 22px 16px; } .careers-apply { padding: 25px; } }
 
+.application-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 64px; }
+.application-form fieldset { border: 0; min-width: 0; }
+.application-form legend { font-size: 28px; font-weight: 600; }
+.application-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 28px; }
+.application-fields label { display: flex; flex-direction: column; gap: 8px; font-size: 15px; }
+.application-fields input, .application-fields select, .application-fields textarea { width: 100%; border: 1px solid var(--foreground); background: var(--background); color: var(--foreground); padding: 12px; font-size: 16px; border-radius: 2px; }
+.application-fields textarea { resize: vertical; }
+.application-wide { grid-column: 1 / -1; }
+.application-consent { display: flex; align-items: flex-start; gap: 12px; margin-block: 28px; font-size: 14px; line-height: 1.6; }
+.application-consent input { margin-top: 5px; width: 18px; height: 18px; flex-shrink: 0; }
+.application-consent a, .application-layout aside .details-note a { text-decoration: underline; }
+.application-error { border: 1px solid var(--brand-orange); padding: 16px; margin-bottom: 20px; }
+.application-layout aside p { font-size: 15px; line-height: 1.7; margin-block: 24px; }
+.application-layout aside h3 { font-size: 24px; }
+.application-confirmation { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+.application-confirmation code { overflow-wrap: anywhere; }
+.application-form button:disabled { opacity: .65; cursor: wait; }
+@media(max-width: 760px) { .application-layout { grid-template-columns: 1fr; gap: 40px; } .application-fields { grid-template-columns: 1fr; } }
+
+.shop-actions .button-dark { background: transparent; color: var(--brand-cream); border: 1px solid var(--brand-cream); }
+.shop-actions .button-dark:hover { background: var(--brand-cream); color: var(--foreground); }
+.desktop-nav .nav-locations .nav-panel { left: -24px; right: auto; }
+.desktop-nav .nav-story .nav-panel { left: auto; right: 0; }
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

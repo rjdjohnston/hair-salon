@@ -21,11 +21,11 @@ function NavigationItems({ close }: { close: () => void }) {
     },
   }
   return <>
-    <details className="nav-dropdown" {...hoverHandlers}><summary>Services <ChevronDown size={14} aria-hidden="true"/></summary><div className="nav-panel"><a className="nav-overview" href="/services" onClick={close}>Explore all services <ArrowUpRight size={16}/></a><div className="nav-service-list">{services.map(service => <a key={service.slug} href={`/services/${service.slug}`} onClick={close}>{service.title}</a>)}</div></div></details>
-    <a href="/#our-story" onClick={close}>Our story</a>
     <details className="nav-dropdown nav-locations" {...hoverHandlers}><summary>Locations <ChevronDown size={14} aria-hidden="true"/></summary><div className="nav-panel"><a className="nav-overview" href="/locations" onClick={close}>Find your shop <ArrowUpRight size={16}/></a><div className="nav-state-list">{states.map(state => <section key={state}><h2>{state}</h2>{shops.filter(shop => shop.state === state).map(shop => <a key={shop.slug} href={`/locations/${shop.slug}`} onClick={close}>{shop.name}</a>)}</section>)}</div></div></details>
+    <details className="nav-dropdown" {...hoverHandlers}><summary>Services <ChevronDown size={14} aria-hidden="true"/></summary><div className="nav-panel"><a className="nav-overview" href="/services" onClick={close}>Explore all services <ArrowUpRight size={16}/></a><div className="nav-service-list">{services.map(service => <a key={service.slug} href={`/services/${service.slug}`} onClick={close}>{service.title}</a>)}</div></div></details>
     <a href="https://hairmx.com/our-stylists/" onClick={close}>Stylists</a>
     <a href="/careers" onClick={close}>Careers</a>
+    <details className="nav-dropdown nav-story" {...hoverHandlers}><summary>Our story <ChevronDown size={14} aria-hidden="true"/></summary><div className="nav-panel"><a className="nav-overview" href="/#our-story" onClick={close}>Meet Hair Mechanix <ArrowUpRight size={16}/></a>{[['Blog','https://hairmx.com/blog/'],['Social','/#social'],['Franchises','https://hairmx.com/business-opportunities/'],['Contact Us','/locations']].map(([label,url]) => <a href={url} key={label} onClick={close}>{label}</a>)}</div></details>
   </>
 }
 
@@ -41,10 +41,16 @@ export function SiteHeader() {
     const dismiss = (event: PointerEvent) => {
       if (!headerRef.current?.contains(event.target as Node)) close()
     }
+    const header = headerRef.current
+    const toggle = (event: Event) => {
+      const target = event.target as HTMLDetailsElement
+      if (target.tagName === 'DETAILS' && target.open) header?.querySelectorAll<HTMLDetailsElement>('details[open]').forEach(detail => { if (detail !== target) detail.open = false })
+    }
+    header?.addEventListener('toggle', toggle, true)
     const resize = () => close()
     document.addEventListener('pointerdown', dismiss)
     window.addEventListener('resize', resize)
-    return () => { document.removeEventListener('pointerdown', dismiss); window.removeEventListener('resize', resize) }
+    return () => { header?.removeEventListener('toggle', toggle, true); document.removeEventListener('pointerdown', dismiss); window.removeEventListener('resize', resize) }
   }, [])
   return <>
     <div className="announcement"><span>GOOD HAIR. GREAT COMPANY. NO NONSENSE.</span><span>WALK IN. KICK BACK. LEAVE SHARP. <ArrowUpRight size={12}/></span></div>
@@ -53,9 +59,6 @@ export function SiteHeader() {
       const expanded = (event.target as HTMLElement).closest('details')
       if (expanded?.open) { expanded.open = false; expanded.querySelector('summary')?.focus() }
       else { close(); menuRef.current?.focus() }
-    }} onToggleCapture={event => {
-      const target = event.target as HTMLDetailsElement
-      if (target.tagName === 'DETAILS' && target.open) headerRef.current?.querySelectorAll<HTMLDetailsElement>('details[open]').forEach(detail => { if (detail !== target) detail.open = false })
     }}>
       <a href="/" aria-label="Hair Mechanix home"><Wordmark /></a>
       <nav className="desktop-nav" aria-label="Main navigation"><NavigationItems close={close}/></nav>

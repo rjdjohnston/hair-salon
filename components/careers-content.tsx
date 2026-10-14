@@ -1,6 +1,6 @@
 import { ArrowUpRight, Check, Clock, Music2, TrendingUp, Users } from 'lucide-react'
 
-const applicationUrl = 'https://hairmx.com/apply-now/'
+const applicationUrl = '/apply-now'
 const perks = [
   { icon: TrendingUp, title: 'Your talent. Real upside.', text: 'Store performance bonuses, referral bonuses, employee discounts, and opportunities for advancement. When the team wins, you win.' },
   { icon: Clock, title: 'A life beyond the chair.', text: 'Flexible scheduling with day and evening shifts. Short weekends: Saturday 9–5 and Sunday 9–3.' },
