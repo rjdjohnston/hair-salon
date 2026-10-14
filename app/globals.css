@@ -295,6 +295,33 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 @media(max-width: 800px) { .service-directory { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media(max-width: 600px) { .service-body { grid-template-columns: 1fr; gap: 35px; } .service-directory { grid-template-columns: 1fr; } .service-intro nav { margin-bottom: 30px; } .directory-card { padding: 25px; } }
 
+.desktop-nav a { font-size: 16px; font-weight: 600; padding: 10px 0; white-space: nowrap; }
+.desktop-nav { gap: 24px; }
+.header-book { font-size: 13px; }
+.location-filters { display: flex; gap: 24px; align-items: end; }
+.location-filters > div:first-child { flex: 1; }
+.location-filters label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+.shop-search { display: flex; align-items: center; gap: 12px; border: 1px solid #777166; padding: 0 16px; background: #fffaf0; }
+.shop-search input { width: 100%; min-width: 0; background: transparent; padding: 16px 0; font-size: 16px; }
+.location-filters select { padding: 16px; border: 1px solid #777166; background: #fffaf0; font-size: 16px; min-width: 210px; }
+.location-card h2 { font-size: 35px; margin-top: 0; text-transform: uppercase; overflow-wrap: anywhere; }
+.location-card address, .shop-address { display: flex; gap: 12px; font-style: normal; font-size: 14px; line-height: 1.8; }
+.location-card address svg, .shop-address svg { flex-shrink: 0; margin-top: 4px; }
+.shop-phone { display: flex; gap: 10px; align-items: center; font-size: 15px; }
+.empty-shops { padding: 35px 0; }
+.empty-shops p { margin: 20px 0; }
+.shop-actions { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin-top: 25px; }
+.shop-actions .location-link { font-size: 15px; }
+.booking-note { font-size: 13px; color: #c7bfb4; margin-top: 18px; }
+.shop-address { margin-top: 20px; }
+.shop-notice { border-left: 3px solid var(--brand-orange); padding: 15px 20px; background: #e9e1d3; }
+.location-hours { background: #191917; color: var(--brand-cream); padding: 32px; }
+.location-hours .eyebrow { color: #ed9966; }
+.service-body .location-hours p:not(.eyebrow) { color: #c7bfb4; }
+.location-hours .shop-hours > div { font-size: 14px; }
+@media(max-width: 1000px) { .desktop-nav { display: none; } .header-book { margin-left: auto; } .menu-toggle { display: inline-flex; padding: 10px; } .mobile-nav { position: absolute; top: 100%; left: 0; right: 0; background: #131311; padding: 14px 5% 25px; border-top: 1px solid #ffffff22; } .mobile-nav a { display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid #ffffff22; font-size: 18px; } }
+@media(max-width:600px) { .location-filters { flex-direction: column; align-items: stretch; } .location-filters select { width: 100%; } .location-hours { padding: 24px; } .header-book { font-size: 12px; } }
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

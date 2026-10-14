@@ -11,7 +11,7 @@ export function Wordmark() {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
-  const links = [{ name: 'Services', href: '/services' }, { name: 'Our story', href: '/#our-story' }, { name: 'Locations', href: '/#locations' }, { name: 'Stylists', href: 'https://hairmx.com/our-stylists/' }, { name: 'Careers', href: 'https://hairmx.com/apply-now/' }]
+  const links = [{ name: 'Services', href: '/services' }, { name: 'Our story', href: '/#our-story' }, { name: 'Locations', href: '/locations' }, { name: 'Stylists', href: 'https://hairmx.com/our-stylists/' }, { name: 'Careers', href: 'https://hairmx.com/apply-now/' }]
   return <>
     <div className="announcement"><span>GOOD HAIR. GREAT COMPANY. NO NONSENSE.</span><span>WALK IN. KICK BACK. LEAVE SHARP. <ArrowUpRight size={12}/></span></div>
     <header className="site-header">
