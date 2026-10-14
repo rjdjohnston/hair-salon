@@ -21,10 +21,6 @@ export function CareersHero() {
         <div className="careers-actions"><a className="button button-orange" href="#open-role">FIND YOUR NEXT CHAIR <ArrowUpRight size={17}/></a><a className="text-link" href="#benefits">EXPLORE THE PERKS</a></div>
         <p className="careers-caption">LICENSED BARBERS & COSMETOLOGISTS · NEW TALENT WELCOME</p>
       </div>
-      <figure className="careers-video">
-        <div className="careers-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/dGTTCjAhR_w" title="Hair Mechanix careers video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" /></div>
-        <figcaption><span>GET TO KNOW THE CREW.</span><a href="https://www.youtube.com/watch?v=dGTTCjAhR_w" target="_blank" rel="noopener noreferrer">Watch on YouTube <ArrowUpRight size={16} aria-hidden="true"/><span className="sr-only"> (opens in a new tab)</span></a></figcaption>
-      </figure>
     </div>
   </section>
 }
