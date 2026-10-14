@@ -3,15 +3,15 @@
 import { useState } from 'react'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
 
-export const bookingUrl = 'https://hdev.hairmx.com/schedule-appointment-now/'
+export const bookingUrl = 'https://hairmx.com/schedule-appointment-now/'
 
 export function Wordmark() {
-  return <img className="wordmark" src="/images/hair-mechanix-logo.png" alt="Hair Mechanix — Man Maintenance" width={150} height={76}/>
+  return <img className="wordmark" src="/images/hair-mechanix-logo.png" alt="Hair Mechanix — Maintenance" width={150} height={76}/>
 }
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
-  const links = [{ name: 'Services', href: '#services' }, { name: 'Our story', href: '#our-story' }, { name: 'Locations', href: 'https://hdev.hairmx.com/locations/' }, { name: 'Careers', href: 'https://hdev.hairmx.com/careers/' }]
+  const links = [{ name: 'Services', href: '#services' }, { name: 'Our story', href: '#our-story' }, { name: 'Locations', href: '#locations' }, { name: 'Stylists', href: 'https://hairmx.com/our-stylists/' }, { name: 'Careers', href: 'https://hairmx.com/apply-now/' }]
   return <>
     <div className="announcement"><span>GOOD HAIR. GREAT COMPANY. NO NONSENSE.</span><span>WALK IN. KICK BACK. LEAVE SHARP. <ArrowUpRight size={12}/></span></div>
     <header className="site-header">
