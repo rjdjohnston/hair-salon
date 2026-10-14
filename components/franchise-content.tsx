@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ArrowUpRight, Check, Scissors, Store, Users, MapPin } from 'lucide-react'
 import { FranchiseForm } from '@/components/franchise-form'
 
@@ -25,6 +26,10 @@ export function FranchiseContent() {
     <section className="section-wrap careers-time">
       <p className="eyebrow">LOCAL ROOTS. YOUR NEXT CHAPTER.</p><h2>BRING HAIR MECHANIX TO YOUR CITY.</h2>
       <p>Every community has its own character. Tell us about yours—and what you want to build. Start a conversation about your preferred market, your background, and the opportunity to become part of Hair Mechanix.</p>
+      <div className="careers-perks">
+        <div className="service-shop-image"><Image src="/images/social-inside1.jpg" alt="Styling stations inside a Hair Mechanix shop" fill sizes="(max-width: 600px) 90vw, 45vw" /></div>
+        <div className="service-shop-image"><Image src="/images/social-inside2.jpg" alt="Another view of the Hair Mechanix shop interior" fill sizes="(max-width: 600px) 90vw, 45vw" /></div>
+      </div>
       <p className="details-note">Market availability and ownership requirements must be confirmed with the franchise team. An inquiry is not a reservation or a commitment.</p>
     </section>
     <section className="section-wrap service-body careers-role">
@@ -50,5 +55,5 @@ function FranchiseQuestions() {
     ['What training and support are available?', 'Ask the franchise team to explain the current training, opening support, operating resources, and ongoing responsibilities included in the offering.'],
     ['Does an inquiry commit me to anything?', 'No. Submitting an inquiry expresses your interest and allows you to start exploring the opportunity. It does not reserve a territory or create a franchise agreement.'],
   ]
-  return <section className="section-wrap service-body"><div><p className="eyebrow">BEFORE YOU OPEN THE DOORS</p><h2>A FEW GOOD QUESTIONS.</h2><div className="detail-menu careers-faq">{questions.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div><aside><p className="details-note">This page provides general information only and is not an offer to sell a franchise. Any offer is made through the required franchise disclosure documents and in compliance with applicable law.</p></aside></section>
+  return <section className="section-wrap details-section"><div><p className="eyebrow">BEFORE YOU OPEN THE DOORS</p><h2>A FEW GOOD QUESTIONS.</h2><div className="detail-menu careers-faq">{questions.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div><aside><p className="details-note">This page provides general information only and is not an offer to sell a franchise. Any offer is made through the required franchise disclosure documents and in compliance with applicable law.</p></aside></section>
 }
