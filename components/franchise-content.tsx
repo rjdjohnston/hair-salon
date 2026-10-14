@@ -1,36 +1,54 @@
-import Link from 'next/link'
-import { ArrowUpRight, Check, Plus } from 'lucide-react'
-import { FranchiseForm } from './franchise-form'
+import { ArrowUpRight, Check, Scissors, Store, Users, MapPin } from 'lucide-react'
+import { FranchiseForm } from '@/components/franchise-form'
 
 const advantages = [
-  ['A brand with attitude.', 'A recognizable shop experience inspired by garage culture. Built for men who want more than a quick haircut.'],
-  ['A reason to come back.', 'Haircuts, beard care, and grooming services create opportunities to build lasting relationships with your local community.'],
-  ['People make the difference.', 'Professional stylists and a service-first culture are at the heart of the Hair Mechanix experience.'],
+  { icon: Store, title: 'A shop with personality.', text: 'An industrial-inspired setting, music, and a laid-back atmosphere. Hair Mechanix is built to feel different from an ordinary haircut stop.' },
+  { icon: Scissors, title: 'More than a haircut.', text: 'Professional haircuts and grooming give customers a reason to find their favorite stylist and make the shop part of their routine.' },
+  { icon: Users, title: 'A place in your community.', text: 'Great conversations and personal service are at the heart of the experience. Bring a welcoming local gathering place to your neighborhood.' },
+  { icon: MapPin, title: 'A brand beyond its roots.', text: 'Founded in Michigan in 2012, Hair Mechanix has grown into new communities. Explore where your ownership goals could fit.' },
 ]
-const faqs = [
-  ['Do I need to be a stylist?', 'The current opportunity welcomes investors interested in owning or partnering in a Hair Mechanix location. Discuss your experience and proposed involvement with the franchise team to understand the requirements.'],
-  ['What is the investment?', 'Investment requirements, fees, and financial qualifications are not published here. Request current details from the franchise team and review the applicable Franchise Disclosure Document before making a decision.'],
-  ['Is my city available?', 'Territory availability is assessed individually. Tell us your preferred city and state so the team can discuss current opportunities. Existing locations do not guarantee that additional territories are available.'],
-  ['What support will I receive?', 'Ask the team about training, site selection, opening support, and ongoing operations. The scope of support should be confirmed in the current franchise documents.'],
-]
+
 export function FranchiseContent() {
-  return <div className="franchise-page">
-    <section className="service-intro section-wrap">
-      <nav aria-label="Breadcrumb"><Link href="/">Home</Link><span aria-hidden="true">/</span><span>Franchise Opportunities</span></nav>
+  return <>
+    <section className="service-intro section-wrap careers-hero">
+      <nav aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Franchise Opportunities</span></nav>
       <p className="eyebrow">GROW WITH HAIR MECHANIX</p>
-      <h1>OWN THE SHOP.<br/><em>BUILD YOUR FUTURE.</em></h1>
-      <p className="service-lead">A bold brand. A local gathering place. An opportunity to bring a different kind of men&apos;s grooming experience to your city.</p>
-      <a href="#franchise-inquiry" className="button button-orange">LET&apos;S TALK OWNERSHIP <ArrowUpRight size={18}/></a>
+      <h1>YOUR OWN SHOP.<br/><em>OUR KIND OF ATTITUDE.</em></h1>
+      <p className="service-lead">Bring a different kind of grooming experience to your community. Explore ownership with a brand built around great cuts, real connections, and unmistakable personality.</p>
+      <div className="careers-actions"><a className="button button-orange" href="#franchise-inquiry">LET&apos;S TALK OWNERSHIP <ArrowUpRight size={17}/></a><a className="text-link" href="#opportunity">EXPLORE THE OPPORTUNITY</a></div>
+      <p className="careers-caption">FRANCHISE & BUSINESS OPPORTUNITIES · HAIR MECHANIX</p>
     </section>
-    <section id="the-opportunity" className="story section-wrap franchise-story">
-      <div className="story-image"><img src="/images/social-inside1.jpg" alt="Inside a Hair Mechanix shop with signature industrial styling" className="franchise-story-photo"/><span className="image-label">NOT YOUR AVERAGE BARBERSHOP.</span></div>
-      <div className="story-copy"><p className="eyebrow">THE OWNERSHIP OPPORTUNITY</p><h2>A DISTINCTIVE SHOP.<br/><em>A LOCAL LEGACY.</em></h2><p>Hair Mechanix brings together professional grooming, a distinctive shop environment, and a down-to-earth experience. A place where customers find their stylist, settle into the chair, and feel at home.</p><p>Since 2012, the brand has grown beyond its Michigan roots. Now, explore bringing that unmistakable experience to your community.</p><Link href="/our-story" className="text-link">GET TO KNOW THE BRAND <ArrowUpRight size={16}/></Link></div>
+    <section id="opportunity" className="section-wrap details-section">
+      <div className="section-heading"><div><p className="eyebrow">A BUSINESS WITH CHARACTER</p><h2>BUILT TO STAND OUT.</h2></div></div>
+      <div className="careers-perks">{advantages.map(({ icon: Icon, title, text }) => <article key={title}><Icon size={24} aria-hidden="true"/><h3>{title}</h3><p>{text}</p></article>)}</div>
     </section>
-    <section className="section-wrap franchise-advantages"><p className="eyebrow">WHY HAIR MECHANIX</p><h2>More than a haircut.<br/>A brand worth building.</h2><div className="franchise-advantage-grid">{advantages.map(([title,copy]) => <article key={title}><Check size={24}/><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
-    <section className="franchise-footprint"><img src="/images/social-inside3.jpg" alt="Hair Mechanix styling stations and shop interior" loading="lazy"/><div><p className="eyebrow">LOCAL SHOPS. A BIGGER VISION.</p><h2>Your city.<br/><em>Our next conversation.</em></h2><p>Our footprint spans Michigan, Florida, Pennsylvania, Ohio, and West Virginia. Where could your chapter begin?</p><div className="franchise-states">{['Michigan','Florida','Pennsylvania','Ohio','West Virginia'].map(state => <span key={state}>{state}</span>)}</div><a className="button button-orange" href="#franchise-inquiry">TELL US YOUR MARKET <ArrowUpRight size={18}/></a><small>Territory availability is subject to review. Other markets may be considered.</small></div></section>
-    <section className="section-wrap franchise-process"><div><p className="eyebrow">START WITH A CONVERSATION</p><h2>Big ambitions.<br/>A clear first step.</h2><p>No pressure to have every answer today. Start by sharing where you want to go.</p></div><ol>{[['Introduce yourself','Tell us about yourself, your preferred market, and your ownership goals.'],['Explore the fit','Discuss current opportunities, qualifications, and the questions that matter to you.'],['Make an informed decision','Review the franchise documents, investment requirements, and next steps with the team and your advisors.']].map(([title,copy],i) => <li key={title}><span>0{i+1}</span><div><h3>{title}</h3><p>{copy}</p></div></li>)}</ol></section>
-    <section id="franchise-inquiry" className="section-wrap franchise-inquiry"><div><p className="eyebrow">MAKE YOUR NEXT MOVE</p><h2>Let&apos;s put<br/><em>your city</em><br/>on the agenda.</h2><p>Interested in owning or partnering in a Hair Mechanix location? Tell us a little about yourself to start the discussion.</p><p className="franchise-fine">This is an initial inquiry, not a commitment to invest. Your information will be used to discuss franchise opportunities.</p></div><FranchiseForm/></section>
-    <section className="section-wrap franchise-faq"><div><p className="eyebrow">GOOD QUESTIONS. HONEST ANSWERS.</p><h2>Before you<br/>take the leap.</h2></div><div>{faqs.map(([question,answer]) => <details key={question}><summary>{question}<Plus size={20}/></summary><p>{answer}</p></details>)}</div></section>
-    <p className="section-wrap franchise-disclaimer">This page provides general information and is not an offer to sell a franchise. Any franchise offering is made only through the applicable Franchise Disclosure Document and in compliance with applicable law. No earnings or profitability claims are made on this page.</p>
-  </div>
+    <section className="section-wrap careers-time">
+      <p className="eyebrow">LOCAL ROOTS. YOUR NEXT CHAPTER.</p><h2>BRING HAIR MECHANIX TO YOUR CITY.</h2>
+      <p>Every community has its own character. Tell us about yours—and what you want to build. Start a conversation about your preferred market, your background, and the opportunity to become part of Hair Mechanix.</p>
+      <p className="details-note">Market availability and ownership requirements must be confirmed with the franchise team. An inquiry is not a reservation or a commitment.</p>
+    </section>
+    <section className="section-wrap service-body careers-role">
+      <div><p className="eyebrow">START WITH THE RIGHT QUESTIONS</p><h2>EXPLORE OWNERSHIP.</h2><p>A great business decision starts with a clear understanding of the opportunity. Use your first conversation to discuss:</p>
+        <ul className="service-options">{['Your preferred city and market availability','Your background and approach to running a business','Investment requirements, fees, and financing questions','Training, operating support, and brand expectations','The review process and a realistic opening timeline'].map(item => <li key={item}><Check size={18} aria-hidden="true"/>{item}</li>)}</ul>
+        <h3>MAKE AN INFORMED DECISION.</h3><p>Request the current franchise disclosure documents and review them with your legal and financial advisers before making any commitment. Investment details and financial performance information should come directly from the franchise team.</p>
+      </div>
+      <aside className="careers-apply"><p className="eyebrow">GET TO KNOW HAIR MECHANIX</p><h2>SEE THE BRAND.<br/>MEET THE SHOPS.</h2><p>Discover the story behind the brand and the places that bring it to life.</p><a className="button button-orange" href="/locations">EXPLORE OUR SHOPS <ArrowUpRight size={17}/></a><p className="details-note">See how Hair Mechanix combines professional grooming with a shop experience all its own.</p><a className="text-link" href="/our-story">OUR STORY <ArrowUpRight size={16}/></a></aside>
+    </section>
+    <section className="section-wrap careers-time"><p className="eyebrow">NO PRESSURE. JUST A CONVERSATION.</p><h2>LET&apos;S SEE WHAT&apos;S POSSIBLE.</h2><p>You don&apos;t need every answer to take the first step. Share your interests below and begin exploring whether Hair Mechanix is the right fit for your goals.</p></section>
+    <section id="franchise-inquiry" className="section-wrap details-section application-layout">
+      <FranchiseForm/>
+      <aside><p className="eyebrow">YOUR FIRST STEP</p><h3>TELL US ABOUT YOUR VISION.</h3><p>Share your preferred market, timeline, and any questions you want to discuss. This is an expression of interest, not a franchise application or agreement.</p><h3>BEFORE YOU COMMIT.</h3><p>Confirm availability, investment requirements, and the full terms with the franchise team. No earnings or investment returns are promised.</p></aside>
+    </section>
+    <FranchiseQuestions/>
+  </>
+}
+
+function FranchiseQuestions() {
+  const questions = [
+    ['How much does a franchise cost?', 'Request current investment requirements, franchise fees, and ongoing costs directly from the franchise team. Review the applicable franchise disclosure documents before making any decision.'],
+    ['Is my preferred market available?', 'Include your city and state in the inquiry. Territory availability and any market requirements must be confirmed directly with Hair Mechanix.'],
+    ['What training and support are available?', 'Ask the franchise team to explain the current training, opening support, operating resources, and ongoing responsibilities included in the offering.'],
+    ['Does an inquiry commit me to anything?', 'No. Submitting an inquiry expresses your interest and allows you to start exploring the opportunity. It does not reserve a territory or create a franchise agreement.'],
+  ]
+  return <section className="section-wrap service-body"><div><p className="eyebrow">BEFORE YOU OPEN THE DOORS</p><h2>A FEW GOOD QUESTIONS.</h2><div className="detail-menu careers-faq">{questions.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div><aside><p className="details-note">This page provides general information only and is not an offer to sell a franchise. Any offer is made through the required franchise disclosure documents and in compliance with applicable law.</p></aside></section>
 }
