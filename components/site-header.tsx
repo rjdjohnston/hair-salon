@@ -25,7 +25,7 @@ function NavigationItems({ close }: { close: () => void }) {
     <a href="/#our-story" onClick={close}>Our story</a>
     <details className="nav-dropdown nav-locations" {...hoverHandlers}><summary>Locations <ChevronDown size={14} aria-hidden="true"/></summary><div className="nav-panel"><a className="nav-overview" href="/locations" onClick={close}>Find your shop <ArrowUpRight size={16}/></a><div className="nav-state-list">{states.map(state => <section key={state}><h2>{state}</h2>{shops.filter(shop => shop.state === state).map(shop => <a key={shop.slug} href={`/locations/${shop.slug}`} onClick={close}>{shop.name}</a>)}</section>)}</div></div></details>
     <a href="https://hairmx.com/our-stylists/" onClick={close}>Stylists</a>
-    <a href="https://hairmx.com/apply-now/" onClick={close}>Careers</a>
+    <a href="/careers" onClick={close}>Careers</a>
   </>
 }
 
