@@ -1,4 +1,5 @@
 import { ArrowUpRight, Check, Clock, Music2, TrendingUp, Users } from 'lucide-react'
+import { states } from '@/lib/locations'
 
 const applicationUrl = '/apply-now'
 const perks = [
@@ -9,7 +10,23 @@ const perks = [
 ]
 
 export function CareersHero() {
-  return <section className="service-intro section-wrap careers-hero"><nav aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Careers</span></nav><p className="eyebrow">CAREER OPPORTUNITIES · ALL 5 STATES</p><h1>BIG PERSONALITY.<br/><em>BIGGER POSSIBILITIES.</em></h1><p className="service-lead">Cool cuts. Great coworkers. A career that rewards your skill. Bring your talent to Hair Mechanix—and find a crew that has your back.</p><div className="careers-actions"><a className="button button-orange" href="#open-role">FIND YOUR NEXT CHAIR <ArrowUpRight size={17}/></a><a className="text-link" href="#benefits">EXPLORE THE PERKS</a></div><p className="careers-caption">LICENSED BARBERS & COSMETOLOGISTS · NEW TALENT WELCOME</p></section>
+  return <section className="service-intro section-wrap careers-hero">
+    <nav aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Careers</span></nav>
+    <div className="careers-hero-layout">
+      <div>
+        <p className="eyebrow">CAREER OPPORTUNITIES · ALL 5 STATES</p>
+        <h1>BIG PERSONALITY.<br/><em>BIGGER POSSIBILITIES.</em></h1>
+        <p className="service-lead">Cool cuts. Great coworkers. A career that rewards your skill. Bring your talent to Hair Mechanix—and find a crew that has your back.</p>
+        <p className="careers-state-list">{states.join(' · ')}</p>
+        <div className="careers-actions"><a className="button button-orange" href="#open-role">FIND YOUR NEXT CHAIR <ArrowUpRight size={17}/></a><a className="text-link" href="#benefits">EXPLORE THE PERKS</a></div>
+        <p className="careers-caption">LICENSED BARBERS & COSMETOLOGISTS · NEW TALENT WELCOME</p>
+      </div>
+      <figure className="careers-video">
+        <div className="careers-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/dGTTCjAhR_w" title="Hair Mechanix careers video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" /></div>
+        <figcaption><span>GET TO KNOW THE CREW.</span><a href="https://www.youtube.com/watch?v=dGTTCjAhR_w" target="_blank" rel="noopener noreferrer">Watch on YouTube <ArrowUpRight size={16} aria-hidden="true"/><span className="sr-only"> (opens in a new tab)</span></a></figcaption>
+      </figure>
+    </div>
+  </section>
 }
 
 export function CareersBenefits() {

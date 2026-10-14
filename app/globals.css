@@ -345,6 +345,17 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 @media(max-width:600px) { .location-filters { flex-direction: column; align-items: stretch; } .location-filters select { width: 100%; } .location-hours { padding: 24px; } .header-book { font-size: 12px; } }
 
 .careers-hero h1 { max-width: 1100px; }
+  .careers-hero-layout { display: flex; align-items: center; gap: 48px; }
+  .careers-hero-layout > div { flex: 1; min-width: 0; }
+  .careers-hero .careers-hero-layout h1 { font-size: clamp(40px, 4.3vw, 72px); overflow-wrap: break-word; }
+  .careers-state-list { font-size: 16px; line-height: 1.6; color: var(--brand-orange); margin-bottom: 28px; }
+  .careers-video { flex: 1; min-width: 0; margin: 0; border: 1px solid currentColor; }
+  .careers-video-frame { aspect-ratio: 16 / 9; background: var(--brand-ink); }
+  .careers-video iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .careers-video figcaption { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 20px; font-size: 14px; }
+  .careers-video figcaption > span { font-weight: 700; letter-spacing: .06em; }
+  .careers-video figcaption a { display: inline-flex; align-items: center; gap: 6px; text-decoration: underline; text-underline-offset: 4px; }
+  @media(max-width: 767px) { .careers-hero-layout { flex-direction: column; align-items: stretch; gap: 32px; } .careers-video { flex: auto; } }
 .careers-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; }
 .careers-caption { font-size: 10px; letter-spacing: 1.3px; color: #c7bfb4; margin-top: 28px; }
 .careers-pay-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border: 1px solid #23231b33; }
