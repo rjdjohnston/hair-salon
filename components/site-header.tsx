@@ -5,7 +5,7 @@ import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react'
 import { services } from '@/lib/services'
 import { shops, states } from '@/lib/locations'
 
-export const bookingUrl = 'https://hairmx.com/schedule-appointment-now/'
+export const bookingUrl = '/schedule-appointment-now'
 
 export function Wordmark() {
   return <img className="wordmark" src="/images/hair-mechanix-logo.png" alt="Hair Mechanix — Maintenance" width={150} height={76}/>
