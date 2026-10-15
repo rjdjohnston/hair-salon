@@ -280,6 +280,16 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 @media (max-width: 600px) { .detail-menu, .visit-section, .opportunities { grid-template-columns: 1fr; gap: 32px; } .detail-menu { gap: 0; } .shop-links { grid-template-columns: 1fr 1fr; gap: 8px 20px; } .details-section summary { font-size: 16px; } .location-groups summary { font-size: 26px; } }
 
 .service-intro { background: #171715; color: var(--brand-cream); }
+.social-hero-layout { display: flex; align-items: center; gap: 48px; }
+.social-hero-copy { flex: 1.2; min-width: 0; }
+.social-hero-photo { flex: 1; min-width: 0; margin: 0; background: var(--brand-cream); color: var(--brand-ink); }
+.social-hero-photo > img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.social-hero-photo figcaption { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 24px; }
+.social-hero-photo figcaption .eyebrow { color: var(--brand-ink); font-size: 14px; }
+.social-hero-photo figcaption p { font-size: 18px; line-height: 1.5; margin: 8px 0 0; }
+.social-hero-photo figcaption a { display: grid; place-items: center; flex-shrink: 0; width: 48px; height: 48px; background: var(--brand-orange); color: var(--brand-ink); }
+.social-hero-photo a:focus-visible { outline: 3px solid var(--brand-ink); outline-offset: 4px; }
+@media (max-width: 900px) { .social-hero-layout { flex-direction: column; align-items: stretch; gap: 32px; } .social-hero-photo > img { aspect-ratio: 16 / 9; } }
 .service-intro nav { display: flex; gap: 12px; flex-wrap: wrap; font-size: 14px; color: #c7bfb4; margin-bottom: 45px; }
 .service-intro .eyebrow { color: #ed9966; }
 .service-intro h1 { font-size: clamp(52px, 7vw, 100px); line-height: .98; max-width: 950px; margin-top: 22px; }
