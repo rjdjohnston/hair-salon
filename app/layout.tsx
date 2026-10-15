@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Barlow_Condensed, DM_Sans } from 'next/font/google'
 import './globals.css'
 import { BookingModalHost } from '@/components/booking-modal-host'
+import { CookieNotice } from '@/components/cookie-notice'
 
 const display = Barlow_Condensed({ subsets: ['latin'], weight: ['600', '700', '800', '900'], variable: '--font-display' })
 const sans = DM_Sans({ subsets: ['latin'], variable: '--font-body' })
@@ -48,6 +49,7 @@ export default function RootLayout({
     <html lang="en" className="bg-background" suppressHydrationWarning>
       <body className={`${display.variable} ${sans.variable} antialiased`}>
         <BookingModalHost>{children}</BookingModalHost>
+        <CookieNotice />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
