@@ -35,5 +35,5 @@ export function ShopLocator({ children }: { children: ReactNode }) {
 }
 export function LocateShopsButton() {
  const { locate, busy, error } = useShopLocator()
- return <div className="mt-8"><button type="button" className="button button-orange" onClick={locate} disabled={busy} aria-busy={busy}><MapPin size={18} aria-hidden="true"/>{busy ? 'LOCATING SHOPS…' : 'LOCATE SHOPS NEAR ME'}</button><p className="mt-4 max-w-xl text-sm leading-relaxed">Only requests your location when clicked. Your coordinates stay in your browser. Nearby results use approximate ZIP-code distances.</p><p role="status" className="text-sm leading-relaxed">{error}</p></div>
+ return <div className="mt-8"><div className="flex flex-wrap items-center gap-4"><button type="button" className="button button-orange" onClick={locate} disabled={busy} aria-busy={busy}><MapPin size={18} aria-hidden="true"/>{busy ? 'LOCATING SHOPS…' : 'LOCATE SHOPS NEAR ME'}</button><a className="button button-orange" href="/schedule-appointment-now">BOOK YOUR CHAIR</a></div><p className="mt-4 max-w-xl text-sm leading-relaxed">Only requests your location when clicked. Your coordinates stay in your browser. Nearby results use approximate ZIP-code distances.</p><p role="status" className="text-sm leading-relaxed">{error}</p></div>
 }
