@@ -2,10 +2,10 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 
 const brands = [
-  { name: 'Hair Mechanix', label: 'OUR OWN LINEUP', description: 'Take the shop finish home with Hair Mechanix precision matte cream and texturizing hair powders. Ask your stylist how to work them into your daily routine.', products: ['Precision matte cream', 'Texturizing hair powders'] },
-  { name: 'Billy Jealousy', label: 'HAIR. BEARD. SHAVE.', description: 'From shampoo for your hair type to beard and goatee care, Billy Jealousy helps keep your look maintained between visits. Ask about pre-shave products and the Hot Towel pre-shave treatment.', products: ['Shampoo and haircare', 'Beard grooming', 'Pre-shave care'] },
-  { name: 'Layrite', label: 'FIND YOUR FINISH', description: 'Whether you want shine, a matte finish, or a different level of hold, your stylist can help you choose the right Layrite product for your look.', products: ['Pomade', 'Supershine cream', 'Matte cream', 'Cement clay', 'Grooming spray'] },
-  { name: 'Zenagen', label: 'CARE FOR THINNING HAIR', description: 'Hair Mechanix offers Zenagen haircare for men and women concerned about thinning hair. Ask your stylist about the range and whether it fits your haircare routine.', products: ['Haircare for men and women', 'Stylist-guided recommendations'] },
+  { name: 'Hair Mechanix', image: '/images/products-hair-mechanix.png', alt: 'Hair Mechanix styling product lineup', label: 'OUR OWN LINEUP', description: 'Take the shop finish home with Hair Mechanix precision matte cream and texturizing hair powders. Ask your stylist how to work them into your daily routine.', products: ['Precision matte cream', 'Texturizing hair powders'] },
+  { name: 'Billy Jealousy', image: '/images/products-billy.jpg', alt: 'Billy Jealousy grooming products', label: 'HAIR. BEARD. SHAVE.', description: 'From shampoo for your hair type to beard and goatee care, Billy Jealousy helps keep your look maintained between visits. Ask about pre-shave products and the Hot Towel pre-shave treatment.', products: ['Shampoo and haircare', 'Beard grooming', 'Pre-shave care'] },
+  { name: 'Layrite', image: '/images/products-layrite.jpg', alt: 'Layrite hair styling products', label: 'FIND YOUR FINISH', description: 'Whether you want shine, a matte finish, or a different level of hold, your stylist can help you choose the right Layrite product for your look.', products: ['Pomade', 'Supershine cream', 'Matte cream', 'Cement clay', 'Grooming spray'] },
+  { name: 'Zenagen', image: '/images/products-zenagen.png', alt: 'Zenagen haircare product range', label: 'CARE FOR THINNING HAIR', description: 'Hair Mechanix offers Zenagen haircare for men and women concerned about thinning hair. Ask your stylist about the range and whether it fits your haircare routine.', products: ['Haircare for men and women', 'Stylist-guided recommendations'] },
 ]
 
 export function ProductsContent() {
@@ -21,6 +21,7 @@ export function ProductsContent() {
       <div className="section-heading"><div><p className="eyebrow">AVAILABLE AT HAIR MECHANIX</p><h2 id="products-heading">YOUR MAINTENANCE KIT.</h2></div></div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {brands.map(brand => <article className="directory-card" key={brand.name}>
+          <img src={brand.image} alt={brand.alt} loading="lazy" decoding="async" width={700} height={467} className="mb-6 aspect-[3/2] w-full object-contain"/>
           <p className="eyebrow">{brand.label}</p><h3>{brand.name}</h3><p>{brand.description}</p>
           <ul className="mt-6 flex flex-wrap gap-2" aria-label={`${brand.name} product range`}>{brand.products.map(product => <li key={product} className="border border-current/25 px-3 py-2 text-base">{product}</li>)}</ul>
         </article>)}
