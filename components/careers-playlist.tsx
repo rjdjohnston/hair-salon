@@ -2,6 +2,19 @@ import { VideoCarousel } from '@/components/video-carousel'
 
 const playlistId = 'PLmt4o0YLVCDM7arzXylkrPI5frRM89B2j'
 
+// Preserve the verified crew lineup when YouTube's public RSS feed fails.
+const crewFallback = [
+  { id: 'RtGSPJjM_GQ', title: 'Hair Mechanix Stylist Catie!' },
+  { id: 'FAl5W1_kc5U', title: 'Hair Mechanix Stylist Renea!' },
+  { id: 'vrKAK5-6ovo', title: 'Hair Mechanix Stylist Lashell!' },
+  { id: '096aPL2lpZM', title: 'Hair Mechanix Stylist Abby!' },
+  { id: 'adFjsSo6zhg', title: "The World's Best Mens Hair Stylist!" },
+  { id: 'SQbPmajBsYg', title: 'Looking For The Worlds Best Barbers?' },
+  { id: '4SqZRzIyoyw', title: 'How To Style Mens Hair 2021!' },
+  { id: 'BX0Z6fDFRsk', title: "Awesome Men's Hair Stylists | 2021" },
+  { id: 'dGTTCjAhR_w', title: "Become A Rockin' Stylist for Hair Mechanix! Apply Today!" },
+]
+
 function decodeXml(value: string) {
   return value.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').replace(/&(#x[\da-f]+|#\d+|amp|lt|gt|quot|apos);/gi, (match, entity: string) => {
     const named: Record<string, string> = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" }
@@ -27,5 +40,5 @@ export async function CareersPlaylist({ playlist = playlistId, commercials = fal
   } catch {
     // Keep the public playlist accessible when YouTube's feed is unavailable.
   }
-  return <VideoCarousel videos={videos} playlistId={playlist} commercials={commercials} />
+  return <VideoCarousel videos={videos.length ? videos : playlist === playlistId ? crewFallback : []} playlistId={playlist} commercials={commercials} />
 }
