@@ -4,11 +4,11 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 
 const stylists = [
-  { name: 'Allison', location: 'Auburn Hills', slug: 'auburn-hills', image: 'allison.jpg' },
+  { name: 'Jackie', location: 'Rochester Hills', slug: 'rochester', image: 'jackie.jpg' },
   { name: 'Audrey', location: 'Waterford', slug: 'waterford', image: 'audrey.jpg' },
   { name: 'Brittany', location: 'Southgate', slug: 'southgate', image: 'brittany.jpg' },
   { name: 'Amber', location: 'Morgantown, WV', slug: 'morgantown', image: 'amber.png' },
-  { name: 'Jackie', location: 'Rochester Hills', slug: 'rochester', image: 'jackie.jpg' },
+  { name: 'Allison', location: 'Auburn Hills', slug: 'auburn-hills', image: 'allison.jpg' },
   { name: 'Jennifer', location: 'Troy', slug: 'troy', image: 'jennifer.jpg' },
 ]
 
