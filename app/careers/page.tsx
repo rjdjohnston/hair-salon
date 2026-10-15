@@ -10,5 +10,5 @@ export const metadata: Metadata = {
 }
 
 export default function CareersPage() {
-  return <><a className="skip-link" href="#main">Skip to content</a><SiteHeader/><main id="main"><CareersHero/><CareersBenefits/><CareersRole/><CareersPlaylist/><CareersQuestions/></main><SiteFooter/></>
+  return <><a className="skip-link" href="#main">Skip to content</a><SiteHeader/><main id="main"><CareersHero/><CareersBenefits><CareersPlaylist/></CareersBenefits><CareersRole/><CareersQuestions/></main><SiteFooter/></>
 }
