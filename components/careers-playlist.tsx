@@ -15,6 +15,20 @@ const crewFallback = [
   { id: 'dGTTCjAhR_w', title: "Become A Rockin' Stylist for Hair Mechanix! Apply Today!" },
 ]
 
+const socialPlaylistId = 'PLmt4o0YLVCDPNSv5GfxdNw-MPn1EG0afK'
+const socialFallback = [
+  { id: 'XLZEsayV3zE', title: 'We Discovered Things Men Are Good At | Hair Mechanix' },
+  { id: '32TZHdFKdAU', title: 'Things Men Are Good At..' },
+  { id: 'GYgxmgKHxpc', title: "When You've Spent Far Too Long Playing Video Games.." },
+  { id: 'uPPqCWy7dPs', title: 'Best Mens Hair Styles For 2020 & Death-Defying Stunts At Hair Mechanix' },
+  { id: 'BlrmAeJu9jc', title: 'Go To Your Happy Place With Darren McCarty!' },
+  { id: 'hWJJolRcoyM', title: 'First Impressions Matter, See One Of The Artists At Hair Mechanix!' },
+  { id: '1XSFcaOiTXg', title: 'Two Men Finally Find Out If A Bear Poops In The Woods | Hair Mechanix' },
+  { id: 'mgy7grnM5hk', title: "The Evolution of Men's Haircuts! 1920s to Present Day - Hair Mechanix Cuts for Men!" },
+  { id: 'AZnnMmh2-Zc', title: "Why Hair Mechanix Is The Best Place For Men's Haircuts!" },
+  { id: 'd_CyA3Jm9dY', title: 'BREAKING NEWS Are You Tired Of Looking Like An Idiot?' },
+]
+
 function decodeXml(value: string) {
   return value.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').replace(/&(#x[\da-f]+|#\d+|amp|lt|gt|quot|apos);/gi, (match, entity: string) => {
     const named: Record<string, string> = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" }
@@ -40,5 +54,6 @@ export async function CareersPlaylist({ playlist = playlistId, commercials = fal
   } catch {
     // Keep the public playlist accessible when YouTube's feed is unavailable.
   }
-  return <VideoCarousel videos={videos.length ? videos : playlist === playlistId ? crewFallback : []} playlistId={playlist} commercials={commercials} />
+  const fallback = playlist === playlistId ? crewFallback : playlist === socialPlaylistId ? socialFallback : []
+  return <VideoCarousel videos={videos.length ? videos : fallback} playlistId={playlist} commercials={commercials} />
 }
