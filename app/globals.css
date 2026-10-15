@@ -234,8 +234,8 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 .story-copy em { color: var(--brand-orange); font-style: normal; }
 .story-copy > p:not(.eyebrow) { color: #c4bfb5; font-size: 14px; line-height: 1.9; margin-top: 22px; }
 .story-copy .text-link { margin-top: 25px; }
-.booking-banner { background: var(--brand-ink); color: var(--brand-cream); border-top: 3px solid var(--brand-blue); display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 44px; padding-bottom: 44px; }
-.booking-banner .button-dark { background: var(--brand-orange); color: var(--brand-ink); }
+.booking-banner { background: var(--brand-orange); color: var(--brand-ink); display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 44px; padding-bottom: 44px; }
+.booking-banner .button-dark { background: var(--brand-ink); color: var(--brand-cream); }
 .booking-banner .button-dark:hover { background: var(--brand-cream); color: var(--brand-ink); }
 .booking-banner h2 { font-size: clamp(33px,4.3vw,58px); }
 .button-dark { background: #171715; color: var(--brand-cream); white-space: nowrap; }
