@@ -307,7 +307,7 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 @media(max-width: 800px) { .service-directory { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media(max-width: 600px) { .service-body { grid-template-columns: 1fr; gap: 35px; } .service-directory { grid-template-columns: 1fr; } .service-intro nav { margin-bottom: 30px; } .directory-card { padding: 25px; } }
 
-.desktop-nav > a, .desktop-nav summary { font-size: 16px; font-weight: 400; padding: 12px 0; white-space: nowrap; color: #e2ddd5; }
+.desktop-nav > a, .desktop-nav summary { font-size: 17px; font-weight: 400; padding: 12px 0; white-space: nowrap; color: #e2ddd5; }
 .desktop-nav { gap: 26px; }
 .nav-dropdown { position: relative; }
 .nav-dropdown summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 8px; cursor: pointer; }
