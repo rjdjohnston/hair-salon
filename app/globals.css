@@ -289,7 +289,8 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 .social-hero-photo figcaption p { font-size: 18px; line-height: 1.5; margin: 8px 0 0; }
 .social-hero-photo figcaption a { display: grid; place-items: center; flex-shrink: 0; width: 48px; height: 48px; background: var(--brand-orange); color: var(--brand-ink); }
 .social-hero-photo a:focus-visible { outline: 3px solid var(--brand-ink); outline-offset: 4px; }
-@media (max-width: 900px) { .social-hero-layout { flex-direction: column; align-items: stretch; gap: 32px; } .social-hero-photo > img { aspect-ratio: 16 / 9; } }
+@media (min-width: 641px) and (max-width: 1000px) { .social-hero-layout { gap: 24px; } .service-intro.social-hero h1 { font-size: clamp(40px, 6vw, 60px); } .social-hero-photo figcaption { padding: 16px; } .social-hero-photo figcaption .eyebrow { font-size: 12px; } .social-hero-photo figcaption p { font-size: 16px; } }
+@media (max-width: 640px) { .social-hero-layout { flex-direction: column; align-items: stretch; gap: 32px; } .social-hero-photo { flex: none; } .social-hero-photo > img { aspect-ratio: 16 / 9; max-height: 220px; } }
 .service-intro nav { display: flex; gap: 12px; flex-wrap: wrap; font-size: 14px; color: #c7bfb4; margin-bottom: 45px; }
 .service-intro .eyebrow { color: #ed9966; }
 .service-intro h1 { font-size: clamp(52px, 7vw, 100px); line-height: .98; max-width: 950px; margin-top: 22px; }
