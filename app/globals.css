@@ -280,7 +280,7 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 @media (max-width: 600px) { .detail-menu, .visit-section, .opportunities { grid-template-columns: 1fr; gap: 32px; } .detail-menu { gap: 0; } .shop-links { grid-template-columns: 1fr 1fr; gap: 8px 20px; } .details-section summary { font-size: 16px; } .location-groups summary { font-size: 26px; } }
 
 .service-intro { background: #171715; color: var(--brand-cream); }
-.social-hero-layout { display: flex; align-items: center; gap: 48px; }
+.social-hero-layout { display: flex; align-items: flex-start; gap: 48px; }
 .social-hero-copy { flex: 1.2; min-width: 0; }
 .social-hero-photo { flex: 1; min-width: 0; margin: 0; background: var(--brand-cream); color: var(--brand-ink); }
 .social-hero-photo > img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
