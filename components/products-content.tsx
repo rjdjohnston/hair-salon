@@ -21,7 +21,7 @@ export function ProductsContent() {
       <div className="section-heading"><div><p className="eyebrow">AVAILABLE AT HAIR MECHANIX</p><h2 id="products-heading">YOUR MAINTENANCE KIT.</h2></div></div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {brands.map(brand => <article className="directory-card" key={brand.name}>
-          <img src={brand.image} alt={brand.alt} loading="lazy" decoding="async" width={700} height={467} className="mb-6 aspect-[3/2] w-full object-contain"/>
+          <img src={brand.image} alt={brand.alt} loading="lazy" decoding="async" width={700} height={467} className={`mb-6 aspect-[3/2] w-full object-contain${brand.name === 'Zenagen' ? ' border-[3px] border-[var(--brand-orange)]' : ''}`}/>
           <p className="eyebrow">{brand.label}</p><h3>{brand.name}</h3><p>{brand.description}</p>
           <ul className="mt-6 flex flex-wrap gap-2" aria-label={`${brand.name} product range`}>{brand.products.map(product => <li key={product} className="border border-current/25 px-3 py-2 text-base">{product}</li>)}</ul>
         </article>)}
