@@ -166,7 +166,7 @@
 
 html { scroll-behavior: smooth; scroll-padding-top: 30px; }
 body { font-family: var(--font-body), sans-serif; }
-:root { --brand-orange: #df6626; --brand-blue: #2424c8; --brand-ink: #141412; --brand-cream: #f3efe5; }
+:root { --brand-orange: #df6626; --brand-blue: #2725a7; --brand-ink: #141412; --brand-cream: #f3efe5; }
  .site-header .mobile-book + .mobile-book { background: var(--brand-blue); color: var(--brand-cream); }
  .site-header .mobile-book + .mobile-book:hover { background: var(--brand-blue); color: var(--brand-cream); box-shadow: inset 0 0 0 2px var(--brand-cream); }
 .announcement { background: var(--brand-cream); color: var(--brand-ink); border-bottom: 3px solid var(--brand-blue); display: flex; justify-content: space-between; padding: 9px 4.5%; font-size: 14px; letter-spacing: 1.6px; font-weight: 800; }
@@ -208,10 +208,10 @@ h1,h2,h3 { font-family: var(--font-display), Impact, sans-serif; font-weight: 80
 .section-wrap { padding: 65px 4.5%; }
 .services { background: var(--brand-cream); color: var(--brand-ink); }
 .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
-.section-heading .eyebrow { color: var(--brand-blue); }
-.services .text-link, .details-section .text-link, .details-section .shop-links a, .social-hero-photo .hero-social-links a { color: var(--brand-blue); }
-.services .text-link:hover, .details-section .text-link:hover, .details-section .shop-links a:hover, .social-hero-photo .hero-social-links a:hover { color: var(--brand-ink); }
-.service-arrow { color: var(--brand-blue); }
+.section-heading .eyebrow { color: var(--brand-ink); }
+.services .text-link, .details-section .text-link, .details-section .shop-links a, .social-hero-photo .hero-social-links a { color: var(--brand-ink); }
+.services .text-link:hover, .details-section .text-link:hover, .details-section .shop-links a:hover, .social-hero-photo .hero-social-links a:hover { color: var(--brand-blue); }
+.service-arrow { color: var(--brand-ink); }
 h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1; margin-top: 12px; }
 .text-link { display: inline-flex; align-items: center; gap: 18px; font-size: 14px; font-weight: 800; letter-spacing: 1px; padding-bottom: 6px; border-bottom: 1px solid currentColor; white-space: nowrap; }
 .text-link:hover { color: #b64e1e; }
@@ -234,7 +234,7 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 .story-copy em { color: var(--brand-orange); font-style: normal; }
 .story-copy > p:not(.eyebrow) { color: #c4bfb5; font-size: 14px; line-height: 1.9; margin-top: 22px; }
 .story-copy .text-link { margin-top: 25px; }
-.booking-banner { background: var(--brand-blue); color: var(--brand-cream); display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 44px; padding-bottom: 44px; }
+.booking-banner { background: var(--brand-ink); color: var(--brand-cream); border-top: 3px solid var(--brand-blue); display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 44px; padding-bottom: 44px; }
 .booking-banner .button-dark { background: var(--brand-orange); color: var(--brand-ink); }
 .booking-banner .button-dark:hover { background: var(--brand-cream); color: var(--brand-ink); }
 .booking-banner h2 { font-size: clamp(33px,4.3vw,58px); }
