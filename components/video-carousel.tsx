@@ -1,9 +1,11 @@
 'use client'
 
 import { useRef, useState } from 'react'
+import { useCookieConsent } from './cookie-notice'
 import { ArrowLeft, ArrowRight, ArrowUpRight, Play } from 'lucide-react'
 
 export function VideoCarousel({ videos, playlistId, commercials = false }: { videos: { id: string; title: string }[]; playlistId: string; commercials?: boolean }) {
+  const { preferences, manage } = useCookieConsent()
   const track = useRef<HTMLUListElement>(null)
   const [playing, setPlaying] = useState<string | null>(null)
   function scroll(direction: number) {
@@ -18,7 +20,7 @@ export function VideoCarousel({ videos, playlistId, commercials = false }: { vid
     </div>
     {videos.length ? <ul id="crew-video-track" ref={track} className="crew-video-track" tabIndex={0} aria-label="Hair Mechanix crew videos, scroll horizontally">
       {videos.map((video, index) => <li key={video.id} className="crew-video-card"><div className="crew-video-media">
-        {playing === video.id ? <iframe src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&list=${playlistId}`} title={video.title} allow="autoplay; encrypted-media; picture-in-picture; web-share" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" /> : <button type="button" onClick={() => setPlaying(video.id)} aria-label={`Play ${video.title}`}><img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt="" width={480} height={360} loading="eager" decoding="async"/><span className="crew-video-play"><Play size={24} fill="currentColor" aria-hidden="true"/></span></button>}
+        {!preferences.media ? <button type="button" onClick={manage} aria-label={`Manage preferences to watch ${video.title}`}><span className="video-consent-message">Enable embedded videos in cookie preferences to watch.</span></button> : playing === video.id ? <iframe src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&list=${playlistId}`} title={video.title} allow="autoplay; encrypted-media; picture-in-picture; web-share" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" /> : <button type="button" onClick={() => setPlaying(video.id)} aria-label={`Play ${video.title}`}><img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt="" width={480} height={360} loading="eager" decoding="async"/><span className="crew-video-play"><Play size={24} fill="currentColor" aria-hidden="true"/></span></button>}
       </div><div className="crew-video-caption"><h3>{video.title}</h3><span>{index + 1} / {videos.length}</span></div></li>)}
     </ul> : <p>The video feed is temporarily unavailable. You can still watch the full playlist on YouTube.</p>}
     <a className="text-link" href={`https://www.youtube.com/playlist?list=${playlistId}`} target="_blank" rel="noopener noreferrer">WATCH THE FULL PLAYLIST <ArrowUpRight size={16}/><span className="sr-only"> (opens in a new tab)</span></a>
