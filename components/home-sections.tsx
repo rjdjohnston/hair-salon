@@ -15,7 +15,7 @@ export function Hero() {
         <div className="hero-actions"><a className="button button-orange" href={bookingUrl} aria-haspopup="dialog">BOOK YOUR CHAIR <ArrowUpRight size={18}/></a><a href="/locations" className="location-link"><MapPin size={16}/> FIND YOUR SHOP</a></div>
         <div className="hero-note"><Asterisk className="little-stars" size={15} aria-hidden="true"/> BUILT FOR GUYS. EVERYONE WELCOME.</div>
       </div>
-      <div className="heritage-stamp" aria-label="Hair Mechanix, maintenance"><span>LOOK SHARP · FEEL GOOD</span><Scissors size={35} strokeWidth={1.3}/><strong>THE REAL DEAL</strong><span>HAIR MECHANIX</span></div>
+      <div className="heritage-stamp" aria-label="Hair Mechanix, maintenance"><span>LOOK SHARP · FEEL GOOD</span><Scissors size={35} strokeWidth={1.3}/><strong>Walk-Ins Welcome</strong><span>HAIR MECHANIX</span></div>
       <a href="#services" className="hero-scroll">SCROLL FOR THE GOOD STUFF <ArrowDown size={14}/></a>
       <span className="hero-caption">YOUR CHAIR IS WAITING.</span>
     </section>
