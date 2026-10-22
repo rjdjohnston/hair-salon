@@ -20,7 +20,7 @@ const locations = [
 ]
 
 export function FullServiceMenu() {
-  return <section className="details-section section-wrap" aria-labelledby="full-menu"><div className="section-heading"><div><p className="eyebrow">THE COMPLETE TUNE-UP</p><h2 id="full-menu">MORE WAYS TO LOOK SHARP.</h2></div></div><div className="detail-menu">{menu.map(([title, text]) => <details key={title}><summary>{title}<span aria-hidden="true">+</span></summary><p>{text}<br/><a className="text-link" href={`/services/${services.find(service => service.title === title)!.slug}`}>EXPLORE {title.toUpperCase()} <ArrowUpRight size={16} aria-hidden="true"/></a></p></details>)}</div><p className="details-note">Services and availability vary by shop. Contact your location for pricing and details.</p><a className="text-link" href="/services">FULL SERVICE & PRODUCT DETAILS <ArrowUpRight size={16}/></a></section>
+  return <section className="details-section section-wrap" aria-labelledby="full-menu"><div className="section-heading"><div><p className="eyebrow">THE COMPLETE TUNE-UP</p><h2 id="full-menu">MORE WAYS TO LOOK SHARP.</h2></div></div><div className="detail-menu">{menu.map(([title, text]) => <details key={title}><summary>{title}<span aria-hidden="true">+</span></summary><p>{text}<br/><a className="text-link" href={`/services/${services.find(service => service.title === title)!.slug}`}>Explore {title} <ArrowUpRight size={16} aria-hidden="true"/></a></p></details>)}</div><p className="details-note">Services and availability vary by shop. Contact your location for pricing and details.</p><a className="text-link" href="/services">FULL SERVICE & PRODUCT DETAILS <ArrowUpRight size={16}/></a></section>
 }
 
 export function BusinessDetails() {
