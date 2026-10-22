@@ -10,7 +10,7 @@
 .cookie-notice-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
 .cookie-notice-actions a { text-decoration: underline; text-underline-offset: 4px; font-size: 16px; }
 .cookie-notice-actions button, .cookie-notice-reopen { min-height: 44px; padding: 12px 20px; font-size: 16px; font-weight: 700; cursor: pointer; background: var(--brand-ink); color: var(--brand-cream); border: 1px solid var(--brand-cream); }
-.cookie-notice-reopen { position: fixed; bottom: 12px; left: 12px; z-index: 40; }
+.cookie-notice-reopen { --cookie-icon: #fff; position: fixed; bottom: 12px; left: 12px; z-index: 40; display: grid; place-items: center; width: 48px; height: 48px; padding: 10px; border-radius: 50%; color: var(--cookie-icon); border-color: var(--cookie-icon); }
 .cookie-preferences { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
 .cookie-preferences label { display: flex; align-items: center; gap: 12px; min-height: 44px; }
 .cookie-preferences input { width: 20px; height: 20px; accent-color: var(--brand-orange); }

@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
 import { Analytics } from '@vercel/analytics/next'
+import { Cookie } from 'lucide-react'
 
 type Preferences = { analytics: boolean; media: boolean }
 const denied: Preferences = { analytics: false, media: false }
@@ -56,7 +57,7 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
         {editing ? <button type="button" onClick={() => save(draft)}>Save preferences</button> : <button type="button" onClick={manage}>Manage preferences</button>}
         <a href="https://hairmx.com/privacy-policy-2/">Read our privacy policy</a>
       </div>
-    </section> : <button ref={reopen} className="cookie-notice-reopen" type="button" onClick={manage}>Cookie preferences</button>)}
+    </section> : <button ref={reopen} className="cookie-notice-reopen" type="button" onClick={manage} aria-label="Cookie preferences" title="Cookie preferences"><Cookie size={24} aria-hidden="true" /></button>)}
     {process.env.NODE_ENV === 'production' && preferences.analytics && <Analytics />}
   </ConsentContext.Provider>
 }
