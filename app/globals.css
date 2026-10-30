@@ -308,7 +308,21 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 .resource-links nav { display: flex; flex-wrap: wrap; gap: 16px 24px; }
 .resource-links a { font-size: 14px; color: #c4bdb1; display: inline-flex; align-items: center; gap: 5px; }
 .resource-links a:hover { color: var(--brand-orange); }
-.hero-image { object-position: center center; }
+ .hero-image { object-position: center center; }
+ .home-hero-layout { position: relative; z-index: 1; display: flex; align-items: center; gap: 48px; padding: 64px 4.5% 80px; }
+ .home-hero-layout .hero-content { flex: 1.1; min-width: 0; padding: 0; }
+ .home-hero-layout h1 { font-size: clamp(64px, 7.5vw, 112px); }
+ .home-hero-video { flex: 1; min-width: 0; margin: 0; background: var(--brand-cream); color: var(--brand-ink); }
+ .home-hero-video-media { position: relative; aspect-ratio: 16 / 9; background: var(--brand-ink); color: var(--brand-cream); }
+ .home-hero-video-media button { position: absolute; inset: 0; width: 100%; cursor: pointer; color: var(--brand-cream); background: var(--brand-ink); }
+ .home-hero-video-media button:focus-visible { outline: 3px solid var(--brand-orange); outline-offset: 4px; }
+ .home-hero-video-media img { object-fit: cover; }
+ .home-hero-video-media iframe { width: 100%; height: 100%; border: 0; }
+ .home-hero-play { position: absolute; inset: 0; margin: auto; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--brand-orange); color: var(--brand-ink); }
+ .home-hero-video-label { position: absolute; inset: auto 0 0; padding: 12px; background: var(--brand-ink); color: var(--brand-cream); font-size: 14px; font-weight: 700; letter-spacing: .08em; }
+ .home-hero-video figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 16px; font-size: 14px; font-weight: 700; }
+ .home-hero-video figcaption a { font-weight: 400; text-decoration: underline; text-underline-offset: 3px; }
+ @media (max-width: 900px) { .home-hero-layout { flex-direction: column; align-items: stretch; gap: 40px; padding: 48px 5% 80px; } .home-hero-video { flex: none; } }
 @media (max-width: 850px) and (min-width: 601px) { .desktop-nav { gap: 12px; } .desktop-nav a { font-size: 12px; } .header-book { gap: 8px; padding: 0 12px; font-size: 14px; } }
 @media (max-width: 600px) { .detail-menu, .visit-section, .opportunities { grid-template-columns: 1fr; gap: 32px; } .detail-menu { gap: 0; } .shop-links { grid-template-columns: 1fr 1fr; gap: 8px 20px; } .details-section summary { font-size: 16px; } .location-groups summary { font-size: 26px; } }
 

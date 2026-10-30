@@ -2,12 +2,14 @@ import Image from 'next/image'
 import { ArrowDown, ArrowRight, ArrowUpRight, Scissors, Sparkles, Wind, MapPin, Wrench, Asterisk } from 'lucide-react'
 import { bookingUrl, Wordmark } from './site-header'
 import { ResourceLinks } from './business-details'
+import { HeroVideo } from './hero-video'
 
 export function Hero() {
   return <>
     <section className="hero" aria-labelledby="hero-heading">
       <Image src="/images/hairmx-home.jpg" alt="Hair Mechanix lounge with a black-and-white vintage automotive photo wall and leather chairs" fill priority sizes="100vw" className="hero-image"/>
       <div className="hero-shade"/>
+      <div className="home-hero-layout">
       <div className="hero-content">
         <div className="eyebrow hero-eyebrow"><span/> PRECISION. PERSONALITY. CONFIDENCE.</div>
         <h1 id="hero-heading">MORE THAN<br/>A HAIRCUT.<br/><em>A TUNE-UP.</em></h1>
@@ -15,7 +17,8 @@ export function Hero() {
         <div className="hero-actions"><a className="button button-orange" href={bookingUrl} aria-haspopup="dialog">BOOK YOUR CHAIR <ArrowUpRight size={18}/></a><a href="/locations" className="location-link"><MapPin size={16}/> FIND YOUR SHOP</a></div>
         <div className="hero-note"><Asterisk className="little-stars" size={15} aria-hidden="true"/> BUILT FOR GUYS. EVERYONE WELCOME.</div>
       </div>
-      <div className="heritage-stamp" aria-label="Hair Mechanix, maintenance"><span>LOOK SHARP · FEEL GOOD</span><Scissors size={35} strokeWidth={1.3}/><strong>Walk-Ins Welcome</strong><span>HAIR MECHANIX</span></div>
+      <HeroVideo />
+      </div>
       <a href="#services" className="hero-scroll">SCROLL FOR THE GOOD STUFF <ArrowDown size={14}/></a>
       <span className="hero-caption">YOUR CHAIR IS WAITING.</span>
     </section>
