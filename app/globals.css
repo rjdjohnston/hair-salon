@@ -285,8 +285,8 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 .tuneup-toggle { flex-shrink: 0; }
 .detail-menu details[open] .tuneup-toggle { transform: rotate(45deg); }
 @media (min-width: 601px) { .tuneup-photo { width: 152px; } }
-.detail-menu .text-link { font-size: 14px; font-weight: 600; letter-spacing: 0; gap: 8px; text-transform: none; }
-.detail-menu details p { color: #5c574e; font-size: 14px; line-height: 1.9; padding-bottom: 22px; }
+.detail-menu .text-link { font-size: 17px; font-weight: 600; letter-spacing: 0; gap: 8px; text-transform: none; }
+  .detail-menu details p { color: #5c574e; font-size: 18px; line-height: 1.6; padding-bottom: 22px; }
 .details-note { font-size: 14px; line-height: 1.8; color: #696258; margin: 22px 0; }
 .location-groups summary { font-family: var(--font-display); font-size: 30px; text-transform: uppercase; }
 .location-groups summary > span { font-family: var(--font-body); font-size: 14px; text-transform: none; display: flex; gap: 20px; align-items: center; }
