@@ -237,8 +237,9 @@ h2 { font-size: clamp(40px, 4.8vw, 68px); letter-spacing: -.7px; line-height: 1;
 .service-card:hover { background: #e8dfce; }
 .service-card-top { display: flex; align-items: flex-start; justify-content: space-between; color: var(--brand-blue); margin-bottom: 30px; }
 .service-card-top span { font-size: 12px; color: #77746c; }
-.service-card-photo { position: relative; aspect-ratio: 4 / 3; overflow: hidden; margin-bottom: 22px; }
+.service-card-photo { position: relative; aspect-ratio: 1; overflow: hidden; margin: -24px -24px 24px; }
 .service-card-photo img { object-fit: cover; }
+@media(max-width:760px) { .service-card-photo { margin: -18px -18px 18px; } }
 .service-card h3 { font-size: 28px; }
 .service-card p { font-size: 14px; line-height: 1.8; color: #656057; margin-top: 8px; max-width: 220px; }
 .service-arrow { margin-top: 20px; }
