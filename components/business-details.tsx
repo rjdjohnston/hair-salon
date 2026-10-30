@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import { services } from '@/lib/services'
 
@@ -11,6 +12,16 @@ const menu = [
   ['Scalp treatments', '5- or 10-minute scalp massages with conditioning treatments, plus relaxing shampoo and conditioner services.'],
   ['Take-home haircare', 'Billy Jealousy, Layrite, Zenagen, and Hair Mechanix matte cream and texturizing powders. Ask your stylist for recommendations.'],
 ]
+const menuPhotos: Record<string, { src: string; alt: string }> = {
+  'Precision haircuts': { src: '/images/tuneup-haircut.png', alt: 'Barber using clippers to shape a precision fade' },
+  'Face maintenance': { src: '/images/tuneup-beard.png', alt: 'Barber detailing a beard with a precision trimmer' },
+  'Coloring': { src: '/images/tuneup-color.png', alt: 'Stylist applying hair color with a tint brush and foils' },
+  'Braids & detail work': { src: '/images/tuneup-braids.png', alt: 'Stylist creating neatly sectioned cornrow braids' },
+  'Waxing': { src: '/images/tuneup-waxing.png', alt: 'Professional applying wax to shape a client’s eyebrow' },
+  'Facials': { src: '/images/tuneup-facial.png', alt: 'Client receiving a charcoal sheet mask facial treatment' },
+  'Scalp treatments': { src: '/images/tuneup-scalp.png', alt: 'Stylist massaging a client’s scalp at the shampoo basin' },
+  'Take-home haircare': { src: '/images/tuneup-haircare.png', alt: 'Barber demonstrating styling cream for use at home' },
+}
 const locations = [
   { state: 'Michigan', shops: [['Auburn Hills','auburn-hills'],['Brighton','brighton'],['Davison','davison'],['Grand Blanc','grand-blanc'],['Howell','howell'],['Livonia','livonia'],['Macomb','clinton-township'],['Monroe','monroe'],['Rochester','rochester'],['Shelby','shelby'],['Southgate','southgate'],['Sterling Heights','sterling-heights'],['Troy','troy'],['Waterford','waterford'],['Westland','westland']] },
   { state: 'Florida', shops: [['Jacksonville · Beach Blvd.','jacksonville'],['Jacksonville · Mandarin','san-jose-blvd-jacksonville'],['Clearwater','/hair-mechanix-clearwater/'],['Middleburg','middleburg'],['Palm Harbor','/hair-mechanix-palm-harbor/'],['St. Augustine','st-augustine'],['World Golf Village','world-golf'],['Yulee','yulee']] },
@@ -20,7 +31,7 @@ const locations = [
 ]
 
 export function FullServiceMenu() {
-  return <section className="details-section section-wrap" aria-labelledby="full-menu"><div className="section-heading"><div><p className="eyebrow">THE COMPLETE TUNE-UP</p><h2 id="full-menu">MORE WAYS TO LOOK SHARP.</h2></div></div><div className="detail-menu">{menu.map(([title, text]) => <details key={title}><summary>{title}<span aria-hidden="true">+</span></summary><p>{text}<br/><a className="text-link" href={`/services/${services.find(service => service.title === title)!.slug}`}>Explore {title} <ArrowUpRight size={16} aria-hidden="true"/></a></p></details>)}</div><p className="details-note">Services and availability vary by shop. Contact your location for pricing and details.</p><a className="text-link" href="/services">FULL SERVICE & PRODUCT DETAILS <ArrowUpRight size={16}/></a></section>
+  return <section className="details-section section-wrap" aria-labelledby="full-menu"><div className="section-heading"><div><p className="eyebrow">THE COMPLETE TUNE-UP</p><h2 id="full-menu">MORE WAYS TO LOOK SHARP.</h2></div></div><div className="detail-menu">{menu.map(([title, text]) => <details key={title}><summary><span className="tuneup-photo"><Image src={menuPhotos[title].src} alt={menuPhotos[title].alt} fill sizes="(max-width: 600px) 104px, 152px" /></span><span className="tuneup-title">{title}</span><span className="tuneup-toggle" aria-hidden="true">+</span></summary><p>{text}<br/><a className="text-link" href={`/services/${services.find(service => service.title === title)!.slug}`}>Explore {title} <ArrowUpRight size={16} aria-hidden="true"/></a></p></details>)}</div><p className="details-note">Services and availability vary by shop. Contact your location for pricing and details.</p><a className="text-link" href="/services">FULL SERVICE & PRODUCT DETAILS <ArrowUpRight size={16}/></a></section>
 }
 
 export function BusinessDetails() {
