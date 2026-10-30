@@ -24,7 +24,7 @@ export function Hero() {
 }
 
 const services = [
-  { number: '01', title: 'THE CUT', text: 'Fresh fades. Timeless classics. A precision cut that feels like you.', icon: Scissors, image: '/images/service-cut-hero.jpg', alt: 'Man with a freshly finished precision fade and textured haircut' },
+  { number: '01', title: 'THE CUT', text: 'Fresh fades. Timeless classics. A precision cut that feels like you.', icon: Scissors, image: '/images/service-cut-owner.png', alt: 'Man with a freshly finished precision fade and textured haircut' },
   { number: '02', title: 'THE CLEAN-UP', text: 'Beard detailing and hot lather shaves. It’s all in the details.', icon: Wrench, image: '/images/service-clean-up-hero.jpg', alt: 'Man with a neatly detailed beard and freshly defined cheek line' },
   { number: '03', title: 'THE RESET', text: 'Scalp treatments and a little well-earned time to switch off.', icon: Wind, image: '/images/service-reset-hero.jpg', alt: 'Relaxed man with freshly washed hair after a scalp treatment' },
   { number: '04', title: 'THE EXTRAS', text: 'Color and waxing. The finishing touches to your fresh start.', icon: Sparkles, image: '/images/service-extras-hero.jpg', alt: 'Man with fresh caramel highlights and neatly groomed eyebrows' },
